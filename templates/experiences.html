@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiences</title>
-</head>
-<body>
+{% extends "base.html" %}   
+{% block content %}
+
+    <h2>extending base template</h2>
+
     {% for experience in experiences %}
         {{ experience.region_name }}<br>
         {{ experience.place }}<br>
@@ -14,5 +11,5 @@
         {{ experience.date}}<br>
         {{ experience.created_by }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
