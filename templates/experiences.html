@@ -1,8 +1,6 @@
 {% extends "base.html" %}   
 {% block content %}
 
-    <h2>extending base template</h2>
-
     {% for experience in experiences %}
         {{ experience.region_name }}<br>
         {{ experience.place }}<br>
