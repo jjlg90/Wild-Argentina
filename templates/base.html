@@ -23,7 +23,7 @@
     <header>
 
         <!--Navbar-->
-        <nav class="nav-extended indigo text-shadow darken-4">
+        <nav class="nav-extended blue-grey text-shadow darken-4">
             <div class="nav-wrapper">
                 <a href="{{ url_for('get_experiences') }}" class="brand-logo bold-header left">WA</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -32,7 +32,7 @@
                     <li><a href="#">About</a></li>
                     <li><a href="#">Browse</a></li>
                     <li><a href="#">Discover</a></li>
-                    <li><a href="#">Register</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
                     <li><a href="#">Log In</a></li>
                     <li><a href="#">Share</a></li>
                     <li><a href="#">Profile</a></li>
@@ -48,7 +48,7 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Browse</a></li>
             <li><a href="#">Discover</a></li>
-            <li><a href="#">Register</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="#">Log In</a></li>
             <li><a href="#">Share</a></li>
             <li><a href="#">Profile</a></li>
