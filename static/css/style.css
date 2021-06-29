@@ -9,6 +9,36 @@ nav .bold-header {
     font-size: 4rem;
 }
 
+.wild {
+    margin-top: 0;
+    font-size: 12rem;
+    font-weight: 900;
+    color: #fafafa;
+}
+
+.caption h2 {
+    font-size: 8rem;
+    font-weight: 700;
+}
+
+.caption h5 {
+    font-size: 3rem;
+    font-family: "Lora", sans-serif;
+}
+
+.navigation {
+    background-color: #212121;
+}
+
+.navigation a h2 {
+    color: #fafafa;
+    transition: all 0.35s ease-in-out;
+}
+
+.navigation a h2:hover {
+    color: #faff00;
+}
+
 .social-links p {
     margin-top: 0rem;
 }
