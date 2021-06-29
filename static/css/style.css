@@ -8,3 +8,30 @@
 nav .bold-header {
     font-size: 4rem;
 }
+
+.social-links p {
+    margin-top: 0rem;
+}
+
+.social-links {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.social-links ul li {
+    padding-left: 1rem;
+    display: inline;
+}
+
+.social-links ul {
+    padding-left: 0;
+    padding-right: 1rem;
+}
+.social-links ul li a i {
+    color: #faff00;
+    transition: all 0.35s ease-in-out;
+}
+
+.social-links ul li a i:hover {
+    color: #fafafa;
+}
