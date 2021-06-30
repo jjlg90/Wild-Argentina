@@ -31,7 +31,7 @@
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Browse</a></li>
-                    <li><a href="#">Discover</a></li>
+                    <li><a href="{{ url_for('get_experiences') }}">Discover</a></li>
                     {% if session.user %}
                     <li><a href="#">Share</a></li>
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
