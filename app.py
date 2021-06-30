@@ -24,7 +24,7 @@ def index():
 
 @app.route("/get_experiences")
 def get_experiences():
-    experiences = mongo.db.experiences.find()
+    experiences = list(mongo.db.experiences.find())
     return render_template("experiences.html", experiences=experiences)
 
 
