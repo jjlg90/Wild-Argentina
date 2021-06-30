@@ -17,10 +17,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route("/index")
 def index():
     return render_template("index.html")
+
 
 @app.route("/get_experiences")
 def get_experiences():
@@ -48,8 +50,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
-        
+        return redirect(url_for("profile", username=session["user"]))   
     return render_template("register.html")
 
 
@@ -97,10 +98,15 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    #remove user from session cookies
+    # remove user from session cookies
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/add_experience")
+def add_experience():
+    return render_template("add_experience.html")
 
 
 if __name__ == "__main__":

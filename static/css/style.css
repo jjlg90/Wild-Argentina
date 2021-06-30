@@ -15,7 +15,7 @@ nav .bold-header {
     font-size: 4rem;
 }
 
-/*======================================== Start Carousel ========================================*/
+/*======================================== Start index.html ========================================*/
 
 .wild {
     margin-top: 0;
@@ -34,8 +34,6 @@ nav .bold-header {
     font-family: "Lora", sans-serif;
 }
 
-/*======================================== Start General ========================================*/
-
 .navigation {
     background-color: #212121;
 }
@@ -51,6 +49,10 @@ nav .bold-header {
 
 .exp {
     padding-top: 2rem;
+}
+
+.by-user {
+    font-size: 1rem;
 }
 
 /*======================================== Start Footer ========================================*/

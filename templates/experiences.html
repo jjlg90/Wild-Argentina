@@ -11,10 +11,11 @@
                             
                         </div>
                         <div class="card-content">
-                            <span class="card-title bold-header">
+                            <strong class="card-title bold-header">
                                 {{ experience.experience_name }}
-                            </span>
-                            <strong class="bold-header">{{ experience.region_name }}</strong>
+                                <span class="by-user">by {{ experience.by}}</span>
+                            </strong>
+                            <strong class="bold-header">{{ experience.type }} / {{ experience.region_name }}.</strong>
                             <p>{{ experience.experience_description }}</p>
                         </div>
                         <div class="card-action blue-grey darken-4">
