@@ -106,7 +106,8 @@ def logout():
 
 @app.route("/add_experience")
 def add_experience():
-    return render_template("add_experience.html")
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_experience.html", categories=categories)
 
 
 if __name__ == "__main__":
