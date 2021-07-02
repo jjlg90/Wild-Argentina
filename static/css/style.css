@@ -8,14 +8,22 @@ body {
     font-weight: 600;
     font-family: "Montserrat", sans-serif;
 }
+.mar-t {
+    margin-top: 0;
+    padding-top: 1rem;
+}
+.mar-b {
+    margin-bottom: 0;
+}
 
 /*======================================== Start Navbar ========================================*/
 
 nav .bold-header {
     font-size: 4rem;
+    padding-left: 1rem;
 }
 
-/*======================================== Start index.html ========================================*/
+/*======================================== Start Main ========================================*/
 
 .wild {
     margin-top: 0;

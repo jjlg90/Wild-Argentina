@@ -1,35 +1,41 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="bold-header center-align white-text">ADD NEW EXPERIENCE</h3>
-    <div class="container">
-    <div class="row">
-        <form class="col s12 center-align" method="POST" action="">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix white-text"></i>
-                    <input id="experience_name" name="experience_name" type="text" minlength="6" max="25"
-                        class="materialize-textarea validate white-text" required>
-                    <label for="experience_name">Title</label>
+<h3 class="bold-header center-align white-text mar-t">ADD NEW EXPERIENCE</h3>
+<div class="container">
+
+
+    <div class="row mar-b">
+        <form class="col s12 m8 offset-m2" method="POST" action="">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="input-field col s12">
+                            <i class="fas fa-pencil-alt prefix"></i>
+                            <input id="experience_name" name="experience_name" type="text" minlength="6" max="25"
+                                class="materialize-textarea validate white-text" required>
+                            <label for="experience_name">Title</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix white-text"></i>
-                    <textarea id="experience_description" name="experience_description" minlength="20" max="100" class="materialize-textarea white-text" required></textarea>
-                    <label for="experience_description">Summary</label>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-align-left prefix"></i>
+                        <textarea id="experience_description" name="experience_description" minlength="20" max="100"
+                            class="materialize-textarea white-text" required></textarea>
+                        <label for="experience_description">Summary</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix white-text"></i>
-                    <input id="date" name="date" type="text"
-                        class="datepicker validate white-text" required>
-                    <label for="date">Date</label>
+
+                <div class="row">
+                    <button type="submit" class="col s12 btn-large blue-grey darken-4">
+                        Submit<i class="fas fa-submit"></i>
+                    </button>
                 </div>
             </div>
         </form>
     </div>
-    </div>
+</div>
 
 {% endblock %}
