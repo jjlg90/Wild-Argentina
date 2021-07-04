@@ -145,6 +145,13 @@ def edit_experience(experience_id):
         "edit_experience.html", experience=experience, categories=categories)
 
 
+@app.route("/delete_experience/<experience_id>", methods=["GET"])
+def delete_experience(experience_id):
+    mongo.db.experiences.remove({"_id": ObjectId(experience_id)})
+    flash("Experience Deleted")
+    return redirect(url_for("get_experiences"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
