@@ -1,20 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="bold-header center-align white-text mar-t">EDIT EXPERIENCE</h3>
+    <h3 class="bold-header center-align white-text mar-t">EDIT EXPERIENCE</h3>
 
 
     <div class="row mar-b">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_experience', experience_id=experience._id) }}">
+        <form class="col s12 m8 offset-m2" method="POST"
+            action="{{ url_for('edit_experience', experience_id=experience._id) }}">
             <div class="card-panel">
                 <!--type select-->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-mountain prefix"></i>
                         <select id="category_name" name="category_name" class="validate" required>
-                            <option value="" disabled selected></option>
+                            <option value="" disabled></option>
                             {% for category in categories %}
+                            {% if category.category_name == experience.category_name %}
+                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                            {% else %}
                             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endif %}
                             {% endfor %}
                         </select>
                         <label for="category_name">Experience Type</label>
@@ -25,8 +30,8 @@
                     <div class="input-field col s12">
                         <div class="input-field col s12">
                             <i class="fas fa-pencil-alt prefix"></i>
-                            <input id="experience_name" name="experience_name" type="text" minlength="6" max="25"
-                                class="materialize-textarea validate" required>
+                            <input id="experience_name" name="experience_name" value="{{ experience.experience_name }}"
+                                type="text" minlength="6" max="25" class="materialize-textarea validate" required>
                             <label for="experience_name">Title</label>
                         </div>
                     </div>
@@ -36,9 +41,9 @@
                     <div class="input-field col s12">
                         <div class="input-field col s12">
                             <i class="fas fa-map-pin prefix"></i>
-                            <input id="place_name" name="place_name" type="text" minlength="6" max="15"
+                            <input id="location_name" name="location_name" type="text" minlength="6" max="15"
                                 class="materialize-textarea validate" required>
-                            <label for="place_name">Place</label>
+                            <label for="location_name">Location</label>
                         </div>
                     </div>
                 </div>
@@ -47,19 +52,27 @@
                     <div class="input-field col s12">
                         <i class="fas fa-align-left prefix"></i>
                         <textarea id="experience_description" name="experience_description" minlength="20" max="100"
-                            class="materialize-textarea" required></textarea>
+                            class="materialize-textarea" required>{{- experience.experience_description -}}
+                            </textarea>
                         <label for="experience_description">Summary</label>
                     </div>
                 </div>
-                <!--submit button-->
+                <!--buttons-->
                 <div class="row">
+                <!--submit button-->
                     <button type="submit" class="col s12 btn-large blue-grey darken-4">
-                      <i class="fas fa-edit"></i>  Edit 
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                </div>
+                <!--cancel button-->
+                <div class="row">
+                    <button href="{{ url_for('get_experiences') }}" class="col s12 btn-large red darken-4">
+                        <i class="fas fa-times"></i> Cancel
                     </button>
                 </div>
             </div>
         </form>
-    </div>
+</div>
 
 
 {% endblock %}

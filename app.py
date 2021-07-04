@@ -110,7 +110,7 @@ def add_experience():
         experience = {
             "category_name": request.form.get("category_name"),
             "experience_name": request.form.get("experience_name"),
-            "place_name": request.form.get("place_name"),
+            "location_name": request.form.get("location_name"),
             "experience_description": request.form.get(
                 "experience_description"),
             "by": session["user"]
@@ -129,7 +129,7 @@ def edit_experience(experience_id):
         submit = {
             "category_name": request.form.get("category_name"),
             "experience_name": request.form.get("experience_name"),
-            "place_name": request.form.get("place_name"),
+            "location_name": request.form.get("location_name"),
             "experience_description": request.form.get(
                 "experience_description"),
             "by": session["user"]
