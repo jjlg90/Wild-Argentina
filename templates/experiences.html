@@ -2,7 +2,7 @@
 {% block content %}
 
         <div class="container">
-            <div class="row exp">
+            <div class="row exp mar-b">
                 {% for experience in experiences %}
                 <div class="col s12 m6 l6 xl6">
                     <div class="card large">
@@ -15,11 +15,11 @@
                                 {{ experience.experience_name }}
                                 <span class="by-user">by {{ experience.by}}</span>
                             </strong>
-                            <strong class="bold-header">{{ experience.category_name }} / {{ experience.region_name }}.</strong>
+                            <strong class="bold-header">{{ experience.category_name }} / {{ experience.region_name }}</strong>
                             <p>{{ experience.experience_description }}</p>
                         </div>
                         <div class="card-action blue-grey darken-4">
-                            <a href="#">Read More</a>
+                            <a class="yellow-text darken-2" href="#">Read More</a>
                         </div>
                     </div>
                 </div>

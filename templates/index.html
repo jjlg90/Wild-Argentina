@@ -55,7 +55,11 @@
         <a href="">
             <h2 class="bold-header center-align">- DISCOVER -</h2>
         </a>
-        <a href="{{ url_for('add_experience') }}">
+        {% if session.user %}
+            <a href="{{ url_for('add_experience') }}">
+        {% else %}
+            <a href="{{ url_for('login') }}">
+        {% endif %}
             <h2 class="bold-header center-align">- SHARE -</h2>
         </a>
     </section>
