@@ -104,8 +104,20 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_experience")
+@app.route("/add_experience", methods=["GET", "POST"])
 def add_experience():
+    if request.method == "POST":
+        experience = {
+            "category_name": request.form.get("category_name"),
+            "experience_name" : request.form.get("experience_name"),
+            "place_name" : request.form.get("place_name"),
+            "experience_description" : request.form.get("experience_description"),
+            "by" : session["user"]
+        }
+        mongo.db.experiences.insert_one(experience)
+        flash("New experience added!")
+        return redirect(url_for("get_experiences"))
+        
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_experience.html", categories=categories)
 
