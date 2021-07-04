@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -50,7 +50,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))   
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
 
@@ -109,17 +109,40 @@ def add_experience():
     if request.method == "POST":
         experience = {
             "category_name": request.form.get("category_name"),
-            "experience_name" : request.form.get("experience_name"),
-            "place_name" : request.form.get("place_name"),
-            "experience_description" : request.form.get("experience_description"),
-            "by" : session["user"]
+            "experience_name": request.form.get("experience_name"),
+            "place_name": request.form.get("place_name"),
+            "experience_description": request.form.get(
+                "experience_description"),
+            "by": session["user"]
         }
         mongo.db.experiences.insert_one(experience)
         flash("New experience added!")
         return redirect(url_for("get_experiences"))
-        
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_experience.html", categories=categories)
+
+
+@app.route("/edit_experience/<experience_id>", methods=["GET", "POST"])
+def edit_experience(experience_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "experience_name": request.form.get("experience_name"),
+            "place_name": request.form.get("place_name"),
+            "experience_description": request.form.get(
+                "experience_description"),
+            "by": session["user"]
+        }
+        mongo.db.experiences.update({"_id": ObjectId(experience_id)}, submit)
+        flash("Experience Successfully Updated")
+
+    experience = mongo.db.experiences.find_one(
+        {"_id": ObjectId(experience_id)})
+    categories = mongo.db.categories.find().sort(
+        "category_name", 1)
+    return render_template(
+        "edit_experience.html", experience=experience, categories=categories)
 
 
 if __name__ == "__main__":
