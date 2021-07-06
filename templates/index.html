@@ -52,7 +52,7 @@
         <a href="">
             <h2 class="bold-header center-align">- BROWSE -</h2>
         </a>
-        <a href="">
+        <a href="{{ url_for('get_experiences') }}">
             <h2 class="bold-header center-align">- DISCOVER -</h2>
         </a>
         {% if session.user %}
@@ -65,6 +65,6 @@
     </section>
 
     <section class="latest-additions">
-        <h3 class="bold-header center-align white-text mar-b">LATEST ADDITIONS</h2>
+        <h3 class="bold-header center-align white-text mar-b">LATEST ADDITIONS</h3>
     </section>
 {% endblock %}

@@ -152,6 +152,13 @@ def delete_experience(experience_id):
     return redirect(url_for("get_experiences"))
 
 
+@app.route("/regions")
+def get_regions():
+    regions = list(mongo.db.regions.find().sort(
+        "region_name", 1))
+    return render_template("regions.html", regions=regions)
+    
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
