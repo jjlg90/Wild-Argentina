@@ -29,6 +29,14 @@ def get_experiences():
     experiences = list(mongo.db.experiences.find())
     return render_template("experiences.html", experiences=experiences)
 
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    experiences = list(mongo.db.experiences.find({"$text": {"$search": query}}))
+    return render_template("experiences.html", experiences=experiences)
+
+
 @app.route("/get_regions")
 def get_regions():
     regions = list(mongo.db.regions.find())

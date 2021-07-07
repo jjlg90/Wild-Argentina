@@ -1,35 +1,58 @@
-{% extends "base.html" %}   
+{% extends "base.html" %}
 {% block content %}
 
-        <div class="container">
-            <div class="row exp mar-b">
-                {% for experience in experiences %}
-                <div class="col s12 m6 l6 xl6">
-                    <div class="card large">
-                        <div class="card-image">
-                            <img class="responsive-img" src="{{ experience.picture }}">
-                            
-                        </div>
-                        <div class="card-content">
-                            <strong class="card-title bold-header">
-                                {{ experience.experience_name }}
-                                <span class="by-user">by {{ experience.by}}</span>
-                            </strong>
-                            <strong class="bold-header">{{ experience.category_name }} / {{ experience.region_name }}</strong>
-                            <p>{{ experience.experience_description }}</p>
-                        </div>
-                        <div class="card-action blue-grey darken-4">
-                            <a class="yellow-text darken-2 left" href="#">Read More</a>
-                            {% if session.user|lower == experience.by|lower %}
-                            <a class="red-text darken-2 right" href="{{ url_for('delete_experience', experience_id=experience._id) }}">Delete</a>
-                            <a class="green-text darken-2 right" href="{{ url_for('edit_experience', experience_id=experience._id) }}">Edit</a>
-                            {% endif %}
-                        </div>
+<div class="container">
+    <h3 class="bold-header center-align white-text mar-t">- BROWSE -</h3>
+    <div class="row mar-t">
+        <div class="row card-panel blue-grey darken-4">
+            <form action="{{ url_for('search') }}" method="post" class="col s12">
+                <div class="row valign-wrapper center-align">
+                    <div class="input-field col s12 m8">
+                        <i class="fas fa-search prefix yellow-text"></i>
+                        <input type="text" name="query" id="query" minlength="3" class="validate white-text" required>
+                        <label for="query">Filter</label>
+                    </div>
+                    <div class="col s12 m4">
+                        <a href="{{ url_for('get_experiences') }}" class="red btn">RESET</a>
+                        <button type="submit" class="green darken-2 btn">
+                            <i class="fas fa-search left"></i> Search
+                        </button>
                     </div>
                 </div>
-                {% endfor %}
+            </form>
+        </div>
+    </div>
+    <h3 class="bold-header center-align white-text mar-t">- EXPERIENCES -</h3>
+    <div class="row exp mar-b">
+        {% for experience in experiences %}
+        <div class="col s12 m6 l6 xl6">
+            <div class="card large">
+                <div class="card-image">
+                    <img class="responsive-img" src="{{ experience.picture }}">
+
+                </div>
+                <div class="card-content">
+                    <strong class="card-title bold-header">
+                        {{ experience.experience_name }}
+                        <span class="by-user">by {{ experience.by}}</span>
+                    </strong>
+                    <strong class="bold-header">{{ experience.category_name }} / {{ experience.region_name }}</strong>
+                    <p>{{ experience.experience_description }}</p>
+                </div>
+                <div class="card-action blue-grey darken-4">
+                    <a class="yellow-text darken-2 left" href="#">Read More</a>
+                    {% if session.user|lower == experience.by|lower %}
+                    <a class="red-text darken-2 right"
+                        href="{{ url_for('delete_experience', experience_id=experience._id) }}">Delete</a>
+                    <a class="green-text darken-2 right"
+                        href="{{ url_for('edit_experience', experience_id=experience._id) }}">Edit</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
-            
+        {% endfor %}
+    </div>
+</div>
+
 
 {% endblock %}
