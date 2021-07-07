@@ -4,23 +4,42 @@
 <h3 class="bold-header center-align white-text mar-t">REGIONS</h3>
 
 <div class="container">
-    <div class="row s12 m7">
+
+    
+    <div class="row s12 m7 mar-b">
         <div class="col">
             {% for region in regions %}
-            <div class="card horizontal mar-b">
-                <div class="card-image">
-                    <img src="{{ region.img_url }}">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <h4 class="header bold-header">{{ region.region_name }}</h4>
-                        <p>{{ region.region_summary }}</p>
+                {% if loop.index % 2 != 0 %}
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <img src="{{ region.img_url }}">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <h4 class="header bold-header center">{{ region.region_name }}</h4>
+                                <p>{{ region.region_summary }}</p>
+                            </div>
+                            <div class="card-action blue-grey darken-4">
+                                <a class="yellow-text darken-2 right" href="#">Discover Experiences</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-action blue-grey darken-4">
-                        <a class="yellow-text darken-2 right" href="#">Discover Experiences</a>
+                    {% else %}
+                    <div class="card horizontal">
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <h4 class="header bold-header center">{{ region.region_name }}</h4>
+                                <p>{{ region.region_summary }}</p>
+                            </div>
+                            <div class="card-action blue-grey darken-4">
+                                <a class="yellow-text darken-2 left" href="#">Discover Experiences</a>
+                            </div>
+                        </div>
+                        <div class="card-image">
+                            <img src="{{ region.img_url }}">
+                        </div>
                     </div>
-                </div>
-            </div>
+                    {% endif %}
             {% endfor %}
         </div>
     </div>
