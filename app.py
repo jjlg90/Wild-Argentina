@@ -29,6 +29,11 @@ def get_experiences():
     experiences = list(mongo.db.experiences.find())
     return render_template("experiences.html", experiences=experiences)
 
+@app.route("/get_regions")
+def get_regions():
+    regions = list(mongo.db.regions.find())
+    return render_template("regions.html", regions=regions)
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -150,14 +155,6 @@ def delete_experience(experience_id):
     mongo.db.experiences.remove({"_id": ObjectId(experience_id)})
     flash("Experience Deleted")
     return redirect(url_for("get_experiences"))
-
-
-@app.route("/regions")
-def get_regions():
-    regions = list(mongo.db.regions.find().sort(
-        "region_name", 1))
-    return render_template("regions.html", regions=regions)
-    
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
