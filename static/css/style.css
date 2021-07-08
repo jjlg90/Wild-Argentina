@@ -47,6 +47,7 @@ nav .bold-header {
 }
 
 .navigation a h2 {
+    font-size: 6rem;
     color: #fafafa;
     transition: all 0.35s ease-in-out;
 }
@@ -98,6 +99,10 @@ nav .bold-header {
 .arg {
     font-size: 8rem;
 }
+
+.navigation a h2 {
+    font-size: 5rem;
+}
 }
 
 @media screen and (max-width: 715px) {
@@ -111,6 +116,10 @@ nav .bold-header {
 
 .caption h5 {
     font-size: 2rem;
+}
+
+.navigation a h2 {
+    font-size: 4rem;
 }
 }
 
@@ -126,6 +135,10 @@ nav .bold-header {
 .caption h5 {
     font-size: 2rem;
 }
+
+.navigation a h2 {
+    font-size: 3rem;
+}
 }
 
 @media screen and (max-width: 330px) {
@@ -133,11 +146,15 @@ nav .bold-header {
     font-size: 4rem;
 }
 
-.caption h2 {
+.caption h2, .navigation a h2 {
     font-size: 3rem;
 }
 
 .caption h5 {
+    font-size: 2rem;
+}
+
+.navigation a h2 {
     font-size: 2rem;
 }
 }
