@@ -4,46 +4,46 @@
         <div class="slider">
     <ul class="slides">
       <li>
-        <img class="gradient" src="/static/images/wild.gif"> <!-- random image -->
+        <img src="/static/images/wild.gif"> <!-- random image -->
         <div class="caption center-align">
-          <h1 class="bold-header wild">WILD</h1>
-          <h1 class="bold-header wild hide-on-med-and-down arg">ARGENTINA</h1>
-          <h1 class="bold-header wild hide-on-large-only show-on-medium-and-down">ARG</h1>
+          <h1 class="bold-header wild border">WILD</h1>
+          <h1 class="bold-header wild hide-on-med-and-down arg border">ARGENTINA</h1>
+          <h1 class="bold-header wild hide-on-large-only show-on-medium-and-down border">ARG</h1>
         </div>
       </li>
       <li>
-        <img class="gradient" src="/static/images/northeast.gif"> <!-- random image -->
+        <img src="/static/images/northeast.gif"> <!-- random image -->
         <div class="caption left-align">
-          <h2 class="bold-header">North East</h2>
-          <h5 class="light grey-text text-lighten-3"><em>explore the wilderness</em></h5>
+          <h2 class="bold-header border">North East</h2>
+          <h5 class="light grey-text text-lighten-3 thin-border"><em>explore the wilderness</em></h5>
         </div>
       </li>
       <li>
         <img src="/static/images/cuyo.gif"> <!-- random image -->
         <div class="caption right-align">
-          <h2 class="bold-header">Cuyo</h2>
-          <h5 class="light grey-text text-lighten-3"><em>discover unparalleld flavors</em></h5>
+          <h2 class="bold-header border">Cuyo</h2>
+          <h5 class="light grey-text text-lighten-3 thin-border"><em>discover unparalleld flavors</em></h5>
         </div>
       </li>
       <li>
         <img src="/static/images/pampas.gif"> <!-- random image -->
         <div class="caption center-align">
-          <h2 class="bold-header">Pampas</h2>
-          <h5 class="light grey-text text-lighten-3"><em>find your peace</em></h5>
+          <h2 class="bold-header border">Pampas</h2>
+          <h5 class="light grey-text text-lighten-3 thin-border"><em>find your peace</em></h5>
         </div>
       </li>
       <li>
         <img src="/static/images/northwest.gif"> <!-- random image -->
         <div class="caption right-align">
-          <h2 class="bold-header">North West</h2>
-          <h5 class="light grey-text text-lighten-3"><em>get amazed</em></h5>
+          <h2 class="bold-header border">North West</h2>
+          <h5 class="light grey-text text-lighten-3 thin-border"><em>get amazed</em></h5>
         </div>
       </li>
        <li>
         <img src="/static/images/patagonia.gif"> <!-- random image -->
         <div class="caption right-align">
-          <h2 class="bold-header">Patagonia</h2>
-          <h5 class="light grey-text text-lighten-3"><em>fall in love</em></h5>
+          <h2 class="bold-header border">Patagonia</h2>
+          <h5 class="light grey-text text-lighten-3 thin-border"><em>fall in love</em></h5>
         </div>
       </li>
     </ul>
@@ -52,11 +52,13 @@
 
     <section class="navigation">
         <a href="{{ url_for('get_experiences') }}">
-            <h2 class="bold-header center-align">- BROWSE -</h2>
+            <h2 class="bold-header center-align" style="padding-top: 2rem;">- BROWSE -</h2>
         </a>
+        <p>Search for experiences or browse through every adventure, place or food listed on the website!</p>
         <a href="{{ url_for('get_regions') }}">
             <h2 class="bold-header center-align">- DISCOVER -</h2>
         </a>
+        <p>Planning a trip? Check attractions in every region of the country.</p>
         {% if session.user %}
             <a href="{{ url_for('add_experience') }}">
         {% else %}
@@ -64,9 +66,10 @@
         {% endif %}
             <h2 class="bold-header center-align">- SHARE -</h2>
         </a>
+        <p style="padding-bottom: 3rem;">Want to be a part of our community? Just log in and share your experiences with us!</p>
     </section>
 
     <section class="latest-additions">
-        <h3 class="bold-header center-align white-text mar-b">LATEST ADDITIONS</h3>
+        <h3 class="bold-header center-align white-text mar-b">- ABOUT WILD ARG -</h3>
     </section>
 {% endblock %}
