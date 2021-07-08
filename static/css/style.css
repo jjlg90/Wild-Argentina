@@ -92,3 +92,52 @@ nav .bold-header {
     color: #fafafa;
 }
 
+/*======================================== Start Media Queries ========================================*/
+
+@media screen and (max-width: 1621px) {
+.arg {
+    font-size: 8rem;
+}
+}
+
+@media screen and (max-width: 715px) {
+.wild {
+    font-size: 9rem;
+}
+
+.caption h2 {
+    font-size: 5rem;
+}
+
+.caption h5 {
+    font-size: 2rem;
+}
+}
+
+@media screen and (max-width: 520px) {
+.wild {
+    font-size: 6rem;
+}
+
+.caption h2 {
+    font-size: 4rem;
+}
+
+.caption h5 {
+    font-size: 2rem;
+}
+}
+
+@media screen and (max-width: 330px) {
+.wild {
+    font-size: 4rem;
+}
+
+.caption h2 {
+    font-size: 3rem;
+}
+
+.caption h5 {
+    font-size: 2rem;
+}
+}
