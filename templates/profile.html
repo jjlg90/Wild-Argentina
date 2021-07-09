@@ -1,14 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="container">
+
+    <h3 class="bold-header center-align white-text mar-t">- PROFILE -</h3>
 <div class="row mar-b">
     <div class="col s12 m8 offset-m2">
         <div class="card-panel blue-grey">
            <h3 class="center-align white-text bold-header">
-               {{ username }}'s Profile
+               {{ username }}
            </h3>
         </div>
     </div>
 </div>
+
+ <h3 class="bold-header center-align white-text mar-t">- MY EXPERIENCES -</h3>
+    <div class="row exp mar-b">
+        
+            {% for experience in experiences %}
+            {% if session.user|lower == experience.by|lower %}
+            <div class="col s12 m6 l6 xl6">
+                <div class="card large">
+                    <div class="card-image">
+                        <img class="responsive-img" src="{{ experience.picture }}">
+
+                    </div>
+                    <div class="card-content">
+                        <strong class="card-title bold-header">
+                            {{ experience.experience_name }}
+                            <span class="by-user">by {{ experience.by}}</span>
+                        </strong>
+                        <strong class="bold-header">{{ experience.category_name }} / {{ experience.region_name }}</strong>
+                        <p>{{ experience.experience_description }}</p>
+                    </div>
+                    <div class="card-action blue-grey darken-4">
+                        <a class="yellow-text darken-2 left" href="#">Read More</a>
+                        <a class="red-text darken-2 right"
+                            href="{{ url_for('delete_experience', experience_id=experience._id) }}">Delete</a>
+                        <a class="green-text darken-2 right"
+                            href="{{ url_for('edit_experience', experience_id=experience._id) }}">Edit</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        
+    </div>
+    </div>
 
 {% endblock %}
