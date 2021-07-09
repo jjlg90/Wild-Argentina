@@ -23,13 +23,14 @@
     <header>
 
         <!--Navbar-->
+        <div class="navbar-fixed">
         <nav class="nav-extended blue-grey text-shadow darken-4">
             <div class="nav-wrapper">
                 <a href="{{ url_for('index') }}" class="brand-logo bold-header left">WA</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down" style="padding-right: 1rem;">
                     <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="{{ url_for('index') }}#about-us">About</a></li>
                     <li><a href="{{ url_for('get_experiences') }}">Browse</a></li>
                     <li><a href="{{ url_for('get_regions') }}">Discover</a></li>
                     {% if session.user %}
@@ -43,12 +44,13 @@
                 </ul>
             </div>
         </nav>
+        </div>
 
         <!--Mobile Navbar-->
         <ul class="sidenav" id="mobile-demo">
             <h4 class="center-align">WILD</br>ARGENTINA</h4>
             <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="{{ url_for('index') }}#about-us">About</a></li>
             <li><a href="{{ url_for('get_experiences') }}">Browse</a></li>
             <li><a href="{{ url_for('get_regions') }}">Discover</a></li>
             {% if session.user %}
