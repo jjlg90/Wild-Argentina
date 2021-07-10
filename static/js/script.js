@@ -4,7 +4,7 @@
     $('select').formSelect();
      $('.datepicker').datepicker({
         format: "dd mmmm, yyyy",
-        yearRange: 3,
+        yearRange: [1920,2015],
         showClearBtn: true,
         i18n: {
             done: "Select"
