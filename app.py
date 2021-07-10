@@ -33,7 +33,8 @@ def get_experiences():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    experiences = list(mongo.db.experiences.find({"$text": {"$search": query}}))
+    experiences = list(mongo.db.experiences.find(
+        {"$text": {"$search": query}}))
     return render_template("experiences.html", experiences=experiences)
 
 
@@ -41,6 +42,49 @@ def search():
 def get_regions():
     regions = list(mongo.db.regions.find())
     return render_template("regions.html", regions=regions)
+
+
+# Experiences by region
+
+
+@app.route("/north-west")
+def northwest():
+    regions = list(mongo.db.regions.find())
+    experiences = list(mongo.db.experiences.find())
+    return render_template(
+        "north-west.html", regions=regions, experiences=experiences)
+
+
+@app.route("/north-east")
+def northeast():
+    regions = list(mongo.db.regions.find())
+    experiences = list(mongo.db.experiences.find())
+    return render_template(
+        "north-east.html", regions=regions, experiences=experiences)
+
+
+@app.route("/cuyo")
+def cuyo():
+    regions = list(mongo.db.regions.find())
+    experiences = list(mongo.db.experiences.find())
+    return render_template(
+        "cuyo.html", regions=regions, experiences=experiences)
+
+
+@app.route("/pampas")
+def pampas():
+    regions = list(mongo.db.regions.find())
+    experiences = list(mongo.db.experiences.find())
+    return render_template(
+        "pampas.html", regions=regions, experiences=experiences)
+
+
+@app.route("/patagonia")
+def patagonia():
+    regions = list(mongo.db.regions.find())
+    experiences = list(mongo.db.experiences.find())
+    return render_template(
+        "patagonia.html", regions=regions, experiences=experiences)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -61,8 +105,7 @@ def register():
             "gender": request.form.get("gender").lower(),
             "nationality": request.form.get("nationality").lower(),
             "birthdate": request.form.get("birthdate").lower(),
-            
-        }
+            }
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
@@ -82,12 +125,10 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                    existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
-                        return redirect(url_for(
-                            "profile", username=session["user"]))
+               existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for("profile", username=session["user"]))
 
             else:
                 # invalid password match
@@ -111,8 +152,7 @@ def profile(username):
 
     if session["user"]:
         return render_template(
-            "profile.html", username=username,
-             experiences=experiences)
+            "profile.html", username=username, experiences=experiences)
 
     return redirect(url_for("login"))
 
@@ -171,6 +211,7 @@ def delete_experience(experience_id):
     mongo.db.experiences.remove({"_id": ObjectId(experience_id)})
     flash("Experience Deleted")
     return redirect(url_for("get_experiences"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
