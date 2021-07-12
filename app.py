@@ -186,6 +186,7 @@ def edit_profile(user_id):
 def delete_profile(user_id):
     mongo.db.users.remove({"_id": ObjectId(user_id)})
     flash("Profile Deleted")
+    session.pop("user")
     return redirect(url_for("login"))
 
 
