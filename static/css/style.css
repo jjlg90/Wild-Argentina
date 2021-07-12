@@ -114,6 +114,12 @@ nav .bold-header {
     font-size: 1rem;
 }
 
+.grid {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
 /*======================================== Start Footer ========================================*/
 
 .social-links p {

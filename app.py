@@ -217,6 +217,14 @@ def add_experience():
     return render_template("add_experience.html", categories=categories)
 
 
+@app.route("/view_experience/<experience_id>", methods=["GET"])
+def view_experience(experience_id):
+    experience = mongo.db.experiences.find_one(
+        {"_id": ObjectId(experience_id)})
+    return render_template("view_experience.html",
+                           experience_id=experience)
+
+
 @app.route("/edit_experience/<experience_id>", methods=["GET", "POST"])
 def edit_experience(experience_id):
     if request.method == "POST":
