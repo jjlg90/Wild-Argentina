@@ -105,7 +105,7 @@ def register():
             "gender": request.form.get("gender").lower(),
             "nationality": request.form.get("nationality").lower(),
             "birthdate": request.form.get("birthdate").lower(),
-            }
+        }
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
@@ -159,6 +159,21 @@ def profile(username):
 
 @app.route("/edit_profile/<user_id>", methods=["GET", "POST"])
 def edit_profile(user_id):
+    if request.method == "POST":
+        submit = {
+            "username": request.form.get("username"),
+            "password": generate_password_hash(request.form.get("password")),
+            "user_image": request.form.get(
+                "user_image"),
+            "gender": request.form.get("gender"),
+            "nationality": request.form.get(
+                "nationality"),
+            "birthdate": request.form.get("birthdate"),
+        }
+
+        mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
+        flash("Profile Successfully Updated")
+
     username = mongo.db.users.find_one(
         {"username": session["user"]})
 
