@@ -16,6 +16,7 @@
                     <h5 class="center">Birthdate: {{ username.birthdate }}</h5>
                     <h5 class="center">Gender: {{ username.gender }}</h5>
                     <h5 class="center">Nationality: {{ username.nationality }}</h5>
+                    <h5 class="center">Email: {{ username.email }}</h5>
                 </div>
                 <div class="card-action blue-grey darken-4 center">
                     <a class="green-text darken-2 center" href="{{ url_for('edit_profile', user_id=username._id) }}">Edit profile</a>

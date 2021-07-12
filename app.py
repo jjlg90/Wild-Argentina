@@ -105,6 +105,7 @@ def register():
             "gender": request.form.get("gender").lower(),
             "nationality": request.form.get("nationality").lower(),
             "birthdate": request.form.get("birthdate").lower(),
+            "email": request.form.get("email").lower(),
         }
         mongo.db.users.insert_one(register)
 
@@ -169,6 +170,7 @@ def edit_profile(user_id):
             "nationality": request.form.get(
                 "nationality"),
             "birthdate": request.form.get("birthdate"),
+            "email": request.form.get("email").lower(),
         }
 
         mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
