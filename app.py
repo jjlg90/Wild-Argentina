@@ -157,6 +157,14 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/edit_profile/<user_id>", methods=["GET", "POST"])
+def edit_profile(user_id):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})
+
+    return render_template("edit_profile.html", username=username)
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookies

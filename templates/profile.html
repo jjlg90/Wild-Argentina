@@ -18,7 +18,7 @@
                     <h5 class="center">Nationality: {{ username.nationality }}</h5>
                 </div>
                 <div class="card-action blue-grey darken-4 center">
-                    <a class="green-text darken-2 center" href="#">Edit profile</a>
+                    <a class="green-text darken-2 center" href="{{ url_for('edit_profile', user_id=username._id) }}">Edit profile</a>
                     <a class="red-text darken-2 center" href="#">Delete profile</a>
                 </div>
             </div>
