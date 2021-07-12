@@ -182,6 +182,13 @@ def edit_profile(user_id):
     return render_template("edit_profile.html", username=username)
 
 
+@app.route("/delete_profile/<user_id>", methods=["GET"])
+def delete_profile(user_id):
+    mongo.db.users.remove({"_id": ObjectId(user_id)})
+    flash("Profile Deleted")
+    return redirect(url_for("login"))
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookies
