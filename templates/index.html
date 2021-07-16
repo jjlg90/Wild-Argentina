@@ -52,11 +52,11 @@
 
     <section class="navigation">
         <a href="{{ url_for('get_experiences') }}">
-            <h2 class="bold-header center-align" style="padding-top: 2rem; margin-top: 1rem;">- BROWSE -</h2>
+            <h2 class="bold-header center-align" style="padding-top: 2rem; margin-top: 1rem;">- <span>B</span>ROWSE -</h2>
         </a>
         <p>Search for experiences or browse through every adventure, place, food or tradition listed on the website!</p>
         <a href="{{ url_for('get_regions') }}">
-            <h2 class="bold-header center-align">- DISCOVER -</h2>
+            <h2 class="bold-header center-align">- <span>D</span>ISCOVER -</h2>
         </a>
         <p>Planning a trip? Check attractions in every region of the country.</p>
         {% if session.user %}
@@ -64,7 +64,7 @@
         {% else %}
             <a href="{{ url_for('login') }}">
         {% endif %}
-            <h2 class="bold-header center-align">- SHARE -</h2>
+            <h2 class="bold-header center-align">- <span>S</span>HARE -</h2>
         </a>
         <p style="padding-bottom: 3rem;">Want to be a part of our community? Just log in and share your experiences with us!</p>
     </section>
