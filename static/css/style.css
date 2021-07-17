@@ -133,6 +133,10 @@ nav .bold-header {
     padding: 10px;
 }
 
+#map {
+  height: 20rem;
+}
+
 /*======================================== Start Footer ========================================*/
 
 .social-links p {
