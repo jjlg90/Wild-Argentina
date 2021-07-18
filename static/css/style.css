@@ -1,21 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*======================================== Start General ========================================*/
-body, html {
+body,
+html {
     font-family: "Lora", sans-serif;
     scroll-padding-top: 6rem;
     scroll-behavior: smooth;
 }
+
 .bold-header {
     font-weight: 600;
     font-family: "Montserrat", sans-serif;
-    
+
 }
 
 .mar-t {
     margin-top: 0;
     padding-top: 1.5rem;
 }
+
 .mar-b {
     margin-bottom: 0;
 }
@@ -32,11 +35,11 @@ nav .bold-header {
 }
 
 .brand-logo::first-letter {
-   color:#faff00;
+    color: #faff00;
 }
 
 .log {
-  text-decoration: overline solid #faff00; 
+    text-decoration: overline solid #faff00;
 }
 
 /*======================================== Start Main ========================================*/
@@ -45,6 +48,7 @@ nav .bold-header {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 99;
 }
+
 .wild {
     margin-top: 0;
     font-size: 12rem;
@@ -87,7 +91,7 @@ nav .bold-header {
 }
 
 .navigation a h2 span {
-   color:#faff00;
+    color: #faff00;
 }
 
 .navigation a h2:hover {
@@ -134,7 +138,7 @@ nav .bold-header {
 }
 
 #map {
-  height: 20rem;
+    height: 20rem;
 }
 
 /*======================================== Start Footer ========================================*/
@@ -157,6 +161,7 @@ nav .bold-header {
     padding-left: 0;
     padding-right: 1rem;
 }
+
 .social-links ul li a i {
     color: #faff00;
     transition: all 0.35s ease-in-out;
@@ -166,68 +171,88 @@ nav .bold-header {
     color: #fafafa;
 }
 
+#scroll-down {
+  position: absolute;
+  bottom: 1%;
+  left: 48%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font-size: 4rem;
+  text-decoration: none;
+  transition: opacity .3s;
+  opacity: .5;
+}
+#scroll-down:hover {
+  opacity: 1;
+}
+
+
 /*======================================== Start Media Queries ========================================*/
 
 @media screen and (max-width: 1621px) {
-.arg {
-    font-size: 8rem;
-}
+    .arg {
+        font-size: 8rem;
+    }
 
-.navigation a h2 {
-    font-size: 5rem;
-}
+    .navigation a h2 {
+        font-size: 5rem;
+    }
 }
 
 @media screen and (max-width: 715px) {
-.wild {
-    font-size: 9rem;
-}
+    .wild {
+        font-size: 9rem;
+    }
 
-.caption h2 {
-    font-size: 5rem;
-}
+    .caption h2 {
+        font-size: 5rem;
+    }
 
-.caption h5 {
-    font-size: 2rem;
-}
+    .caption h5 {
+        font-size: 2rem;
+    }
 
-.navigation a h2 {
-    font-size: 4rem;
-}
+    .navigation a h2 {
+        font-size: 4rem;
+    }
 }
 
 @media screen and (max-width: 520px) {
-.wild {
-    font-size: 6rem;
-}
+    .wild {
+        font-size: 6rem;
+    }
 
-.caption h2 {
-    font-size: 4rem;
-}
+    .caption h2 {
+        font-size: 4rem;
+    }
 
-.caption h5 {
-    font-size: 2rem;
-}
+    .caption h5 {
+        font-size: 2rem;
+    }
 
-.navigation a h2 {
-    font-size: 3rem;
-}
+    .navigation a h2 {
+        font-size: 3rem;
+    }
 }
 
 @media screen and (max-width: 330px) {
-.wild {
-    font-size: 4rem;
-}
+    .wild {
+        font-size: 4rem;
+    }
 
-.caption h2, .navigation a h2 {
-    font-size: 3rem;
-}
+    .caption h2,
+    .navigation a h2 {
+        font-size: 3rem;
+    }
 
-.caption h5 {
-    font-size: 2rem;
-}
+    .caption h5 {
+        font-size: 2rem;
+    }
 
-.navigation a h2 {
-    font-size: 2rem;
-}
+    .navigation a h2 {
+        font-size: 2rem;
+    }
 }
