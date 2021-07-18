@@ -39,7 +39,7 @@ function initMap() {
     let xp_location = document.getElementById("xp_location").innerHTML;
 
     //infowindow content
-    let contentString = '<div style="text-align: center; font-weight: 400"><h6>'+ xp_name + '</br>' + xp_location + '</div>';
+    let contentString = '<div style="text-align: center; font-weight: 400"><h6>'+ xp_name + '</h6><p>' + xp_location + '</p></div>';
 
     let infowindow = new google.maps.InfoWindow({
         content: contentString,

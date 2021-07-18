@@ -204,9 +204,18 @@ def add_experience():
         experience = {
             "category_name": request.form.get("category_name"),
             "experience_name": request.form.get("experience_name"),
+            "region_name": request.form.get("region_name"),
             "location_name": request.form.get("location_name"),
+            "season": request.form.get("season"),
             "experience_description": request.form.get(
                 "experience_description"),
+            "picture": request.form.get("picture"),
+            "picture2": request.form.get("picture2"),
+            "picture3": request.form.get("picture3"),
+            "picture4": request.form.get("picture4"),
+            "picture5": request.form.get("picture5"),
+            "latitude": request.form.get("latitude"),
+            "longitude": request.form.get("longitude"),
             "by": session["user"]
         }
         mongo.db.experiences.insert_one(experience)
@@ -231,9 +240,18 @@ def edit_experience(experience_id):
         submit = {
             "category_name": request.form.get("category_name"),
             "experience_name": request.form.get("experience_name"),
+            "region_name": request.form.get("region_name"),
             "location_name": request.form.get("location_name"),
+            "season": request.form.get("season"),
             "experience_description": request.form.get(
                 "experience_description"),
+            "picture": request.form.get("picture"),
+            "picture2": request.form.get("picture2"),
+            "picture3": request.form.get("picture3"),
+            "picture4": request.form.get("picture4"),
+            "picture5": request.form.get("picture5"),
+            "latitude": request.form.get("latitude"),
+            "longitude": request.form.get("longitude"),
             "by": session["user"]
         }
         mongo.db.experiences.update({"_id": ObjectId(experience_id)}, submit)

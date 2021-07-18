@@ -2,6 +2,7 @@
     $('.sidenav').sidenav({edge: "right"});
     $('.slider').slider({height: 600,});
     $('select').formSelect();
+    $('select').formSelect();
      $('.datepicker').datepicker({
         format: "dd mmmm, yyyy",
         yearRange: [1920,2015],
