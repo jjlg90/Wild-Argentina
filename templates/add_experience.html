@@ -31,6 +31,19 @@
                         </div>
                     </div>
                 </div>
+                <!--region select-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-map-marker-alt prefix"></i>
+                        <select id="region_name" name="region_name" class="validate" required>
+                            <option value="" disabled selected></option>
+                            {% for region in regions %}
+                            <option value="{{ region.region_name }}">{{ region.region_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="category_name">Region</label>
+                    </div>
+                </div>
                 <!--place-->
                 <div class="row">
                     <div class="input-field col s12">
@@ -38,8 +51,21 @@
                             <i class="fas fa-map-pin prefix"></i>
                             <input id="place_name" name="place_name" type="text" minlength="6" max="15"
                                 class="materialize-textarea validate" required>
-                            <label for="place_name">Place</label>
+                            <label for="place_name">Place Name</label>
                         </div>
+                    </div>
+                </div>
+                <!--season select-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-sun prefix"></i>
+                        <select id="season" name="season" class="validate" required>
+                            <option value="" disabled selected></option>
+                            {% for season in seasons %}
+                            <option value="{{ season.season }}"></option>{{ season.season }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="season">Season</label>
                     </div>
                 </div>
                 <!--summary-->
@@ -49,6 +75,83 @@
                         <textarea id="experience_description" name="experience_description" minlength="20" max="100"
                             class="materialize-textarea" required></textarea>
                         <label for="experience_description">Summary</label>
+                    </div>
+                </div>
+                <!--#1 Image URL-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="input-field col s12">
+                            <i class="far fa-image prefix"></i>
+                            <input id="picture" name="picture" type="text" minlength="6" max="15"
+                                class="materialize-textarea validate" required>
+                            <label for="picture">#1 Image URL</label>
+                        </div>
+                    </div>
+                </div>
+                <!--#2 Image URL-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="input-field col s12">
+                            <i class="fas fa-image prefix"></i>
+                            <input id="picture2" name="picture2" type="text" minlength="6" max="15"
+                                class="materialize-textarea validate" required>
+                            <label for="picture2">#2 Image URL</label>
+                        </div>
+                    </div>
+                </div>
+                <!--#3 Image URL-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="input-field col s12">
+                            <i class="far fa-image prefix"></i>
+                            <input id="picture3" name="picture3" type="text" minlength="6" max="15"
+                                class="materialize-textarea validate" required>
+                            <label for="picture3">#3 Image URL</label>
+                        </div>
+                    </div>
+                </div>
+                <!--#4 Image URL-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="input-field col s12">
+                            <i class="fas fa-image prefix"></i>
+                            <input id="picture4" name="picture4" type="text" minlength="6" max="15"
+                                class="materialize-textarea validate" required>
+                            <label for="picture4">#4 Image URL</label>
+                        </div>
+                    </div>
+                </div>
+                <!--#5 Image URL-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="input-field col s12">
+                            <i class="far fa-image prefix"></i>
+                            <input id="picture5" name="picture5" type="text" minlength="6" max="15"
+                                class="materialize-textarea validate" required>
+                            <label for="picture5">#5 Image URL</label>
+                        </div>
+                    </div>
+                </div>
+                <!--Latitude-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="input-field col s12">
+                            <i class="fas fa-map-marked-alt prefix"></i>
+                            <input id="latitude" name="latitude" type="text" minlength="6" max="15"
+                                class="materialize-textarea validate" required>
+                            <label for="latitude">Latitude</label>
+                        </div>
+                    </div>
+                </div>
+                <!--Longitude-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="input-field col s12">
+                            <i class="fas fa-map-marked-alt prefix"></i>
+                            <input id="longitude" name="longitude" type="text" minlength="6" max="15"
+                                class="materialize-textarea validate" required>
+                            <label for="longitude">Longitude</label>
+                        </div>
                     </div>
                 </div>
                 <!--submit button-->
