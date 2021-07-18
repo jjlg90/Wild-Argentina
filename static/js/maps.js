@@ -1,7 +1,7 @@
 //Render Google Maps
 let map;
 
-//Get location form experience
+//Get location data from experience
 let lat = document.getElementById("lat").innerHTML;
 let lng = document.getElementById("lng").innerHTML;
 
@@ -13,15 +13,44 @@ function initMap() {
     xp_lng = parseFloat(lng);
     //Store coordinates in variable
     let mapOptions = {
-	    center: { lat: xp_lat, lng: xp_lng },
-	    zoom: 13
-	};
+        center: {
+            lat: xp_lat,
+            lng: xp_lng
+        },
+        zoom: 11
+    };
 
     //Center map on location
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-    console.log(typeof xp_lat)
-    console.log(xp_lat)
-    console.log(typeof xp_lng)
-    console.log(xp_lng)
+    //Add marker to location
+    my_position = {
+        lat: xp_lat,
+        lng: xp_lng
+    }
+
+    marker = new google.maps.Marker({
+        position: my_position,
+        map,
+    });
+
+    //Get data from experience
+    let xp_name = document.getElementById("xp_name").innerHTML;
+    let xp_location = document.getElementById("xp_location").innerHTML;
+
+    //infowindow content
+    let contentString = '<div style="text-align: center; font-weight: 400"><h6>'+ xp_name + '</br>' + xp_location + '</div>';
+
+    let infowindow = new google.maps.InfoWindow({
+        content: contentString,
+    });
+
+    //Trigger infowindow on click
+    marker.addListener("click", () => {
+        infowindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false,
+        });
+    });
 }
