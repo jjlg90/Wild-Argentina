@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block styles %}
     <!-- Compiled and minified Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
@@ -13,7 +14,6 @@
         type="text/css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    {% block styles %}
     {% endblock %}
     <title>WA</title>
 </head>
@@ -100,12 +100,40 @@
                             <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                         </li>
                     </ul>
-                    <a class="grey-text text-lighten-4" href="#!">Contact</a>
+                    <a data-target="modal1" class="grey-text modal-trigger text-lighten-4 btn-flat">Contact</a>
                 </div>
+            </div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content center-align grey darken-4">
+                <h3 class="uppercase center-align">Wild Argentina</h3>
+                <h5 class="uppercase center-align">Get in touch</h5>
+                <div class="center-form">
+                    <form id="contact-form" onsubmit="return sendMail(this);">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Name" required />
+                        <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
+                            required />
+                        <textarea rows="5" name="message" id="message" class="form-control"
+                            placeholder="Write your message here" required></textarea>
+                        <div class="form-row text-center">
+                            <div class="col">
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="modal-footer grey darken-3 center-align">
+                <button type="submit" class="btn center-align green darken-3">Send</button>
+                <a href="#!" id="close" type="button" class="modal-close center-align waves-effect waves-green btn red" data-dismiss="modal">Close</a>
             </div>
         </div>
     </footer>
 
+    {% block scripts %}
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -121,7 +149,6 @@
     <script src="{{ url_for('static', filename='js/maps.js') }}"></script>
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %}
     {% endblock %}
 </body>
 

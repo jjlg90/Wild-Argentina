@@ -269,7 +269,7 @@ def edit_experience(experience_id):
 def delete_experience(experience_id):
     mongo.db.experiences.remove({"_id": ObjectId(experience_id)})
     flash("Experience Deleted")
-    return redirect(url_for("get_experiences"))
+    return redirect(url_for("profile"))
 
 
 if __name__ == "__main__":

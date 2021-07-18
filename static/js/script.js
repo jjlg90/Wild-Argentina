@@ -1,8 +1,10 @@
  $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $('.slider').slider({height: 600,});
-    $('select').formSelect();
-    $('select').formSelect();
+    $('#category_name').formSelect();
+    $('#region_name').formSelect();
+    $('#season').formSelect();
+    $('.modal').modal();
      $('.datepicker').datepicker({
         format: "dd mmmm, yyyy",
         yearRange: [1920,2015],
