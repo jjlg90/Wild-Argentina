@@ -56,6 +56,7 @@
     }
 });
 
+
 function myFunction(imgs) {
             // Get the expanded image
             var expandImg = document.getElementById("expandedImg");

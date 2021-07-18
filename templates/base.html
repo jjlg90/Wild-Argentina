@@ -14,6 +14,13 @@
         type="text/css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- EmailJS initializer -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("user_ULU1b0pe9Kb7Ry244BdGf");
+        })();
+    </script>
     {% endblock %}
     <title>WA</title>
 </head>
@@ -107,28 +114,30 @@
 
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
-            <div class="modal-content center-align grey darken-4">
-                <h3 class="uppercase center-align">Wild Argentina</h3>
-                <h5 class="uppercase center-align">Get in touch</h5>
+            <div class="modal-content center-align grey darken-4 white-text">
+                <h3 class="center-align">Wild Argentina</h3>
+                <h5 class="center-align">Get in touch</h5>
                 <div class="center-form">
                     <form id="contact-form" onsubmit="return sendMail(this);">
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Name" required />
-                        <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
+                        <input type="text" name="name" id="name" class="white-text form-control" placeholder="Name"
                             required />
-                        <textarea rows="5" name="message" id="message" class="form-control"
+                        <input type="email" name="email" id="emailaddress" class="white-text form-control"
+                            placeholder="Email" required />
+                        <textarea rows="5" name="message" id="message" class="white-text form-control"
                             placeholder="Write your message here" required></textarea>
                         <div class="form-row text-center">
                             <div class="col">
 
                             </div>
                         </div>
+                        <div class="modal-footer grey darken-3 center-align">
+                        <button type="submit" class="btn center-align green darken-3">Send</button>
+                        <a href="#!" id="close" type="button"
+                            class="modal-close center-align waves-effect waves-green btn red"
+                            data-dismiss="modal">Close</a>
+                            </div>
                     </form>
                 </div>
-
-            </div>
-            <div class="modal-footer grey darken-3 center-align">
-                <button type="submit" class="btn center-align green darken-3">Send</button>
-                <a href="#!" id="close" type="button" class="modal-close center-align waves-effect waves-green btn red" data-dismiss="modal">Close</a>
             </div>
         </div>
     </footer>
@@ -147,6 +156,8 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp3FIRc6f1WgBKtu63UvR6_Ae21t_1MT4&callback=initMap">
     </script>
     <script src="{{ url_for('static', filename='js/maps.js') }}"></script>
+    <!-- EmailJS API -->
+    <script src="{{ url_for('static', filename='js/emailjs.js') }}"></script>
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% endblock %}
