@@ -20,8 +20,11 @@
                     <p><em>Visiting season: {{ experience_id.season }}</em></p>
                     <p><em>Uploaded: {{experience_id.date}}</em></p>
                 </div>
-                <div class="card-action">
-
+                <div class="card-action white-text">
+                    <h6 class="center-align white-text">Coordinates</h6>
+                    <hr>
+                    <p>Latitude: <span id="lat">{{ experience_id.latitude }}</span></p>
+                    <p>Longitude: <span id="lng">{{ experience_id.longitude }}</span></p>
                 </div>
             </div>
         </div>
@@ -57,7 +60,7 @@
     </div>
 
     <div class="row mar-b center-align">
-            <div id="map">
+            <div id="map" onload="viewExperienceMap()">
             </div>
     </div>
 
