@@ -94,3 +94,15 @@
         </div>
     </section>
 {% endblock %}
+
+{% block active %}
+<script>
+    $('#li-ind').toggleClass('active');
+
+    $('#li-abt').click(function(){
+        $('#li-ind').removeClass('active');
+        $('#li-abt').toggleClass('active');
+        })
+    
+</script>
+{% endblock %}
