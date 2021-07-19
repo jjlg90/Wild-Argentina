@@ -194,6 +194,25 @@ nav .bold-header {
   opacity: 1;
 }
 
+/*======================================== 404.html ========================================*/
+
+.error{
+    font-size: 22rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #fafafa;
+    margin-top: 0rem;
+}
+
+#goback {
+    color: #faff00;
+    transition: all 0.35s ease-in-out;
+}
+
+#goback:hover {
+    color: #fff;
+    transition: all 0.35s ease-in-out;
+}
 
 /*======================================== Start Media Queries ========================================*/
 
