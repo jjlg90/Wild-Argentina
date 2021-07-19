@@ -19,9 +19,13 @@
             done: "Select"
         }
     });
+    validatePassword();
 
     validateMaterializeSelect();
 
+    img_gallery(imgs);
+
+//Store password and repeat password values.
     function validateMaterializeSelect() {
         let classValid = {
             "border-bottom": "1px solid #4caf50",
@@ -62,10 +66,26 @@
     }
 });
 
-
-function myFunction(imgs) {
+//Control gallery images display.
+function img_gallery(imgs) {
             // Get the expanded image
             var expandImg = document.getElementById("expandedImg");
             // Use the same src in the expanded image as the image being clicked on from the grid
             expandImg.src = imgs.src;
         }
+  
+//Store password and repeat password values.
+let password = document.getElementById("password");
+let confirm_password = document.getElementById("confirm_password");
+
+//Compare values.
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
