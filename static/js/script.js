@@ -1,13 +1,19 @@
  $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $('.slider').slider({height: 600,});
-    $('#category_name').formSelect();
-    $('#region_name').formSelect();
-    $('#season').formSelect();
+    $('select').formSelect();
     $('.modal').modal();
-     $('.datepicker').datepicker({
+    $('.datepicker').datepicker({
         format: "dd mmmm, yyyy",
         yearRange: [1920,2015],
+        showClearBtn: true,
+        i18n: {
+            done: "Select"
+        }
+    });
+    $('#experience_date').datepicker({
+        format: "dd mmmm, yyyy",
+        yearRange: [2015,2021],
         showClearBtn: true,
         i18n: {
             done: "Select"

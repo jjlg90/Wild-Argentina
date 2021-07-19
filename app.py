@@ -211,7 +211,7 @@ def add_experience():
             "experience_name": request.form.get("experience_name"),
             "region_name": request.form.get("region_name"),
             "location_name": request.form.get("location_name"),
-            "season": request.form.get("season"),
+            "experience_date": request.form.get("experience_date"),
             "experience_description": request.form.get(
                 "experience_description"),
             "picture": request.form.get("picture"),
@@ -228,7 +228,10 @@ def add_experience():
         return redirect(url_for("get_experiences"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_experience.html", categories=categories)
+    regions = mongo.db.regions.find().sort("region_name", 1)
+    return render_template(
+        "add_experience.html", categories=categories,
+        regions=regions)
 
 
 @app.route("/view_experience/<experience_id>", methods=["GET"])
@@ -247,7 +250,7 @@ def edit_experience(experience_id):
             "experience_name": request.form.get("experience_name"),
             "region_name": request.form.get("region_name"),
             "location_name": request.form.get("location_name"),
-            "season": request.form.get("season"),
+            "experience_date": request.form.get("experience_date"),
             "experience_description": request.form.get(
                 "experience_description"),
             "picture": request.form.get("picture"),
@@ -266,15 +269,19 @@ def edit_experience(experience_id):
         {"_id": ObjectId(experience_id)})
     categories = mongo.db.categories.find().sort(
         "category_name", 1)
+    regions = mongo.db.regions.find().sort("region_name", 1)
     return render_template(
-        "edit_experience.html", experience=experience, categories=categories)
+        "edit_experience.html", experience=experience,
+        categories=categories, regions=regions,)
 
 
 @app.route("/delete_experience/<experience_id>", methods=["GET"])
 def delete_experience(experience_id):
     mongo.db.experiences.remove({"_id": ObjectId(experience_id)})
     flash("Experience Deleted")
-    return redirect(url_for("profile"))
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})
+    return render_template("profile.html", username=username)
 
 
 if __name__ == "__main__":
