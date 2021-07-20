@@ -1,4 +1,4 @@
-//Render Google Maps
+//Render Google Maps -- view_experience.html
 let map;
 
 //Get location data from experience

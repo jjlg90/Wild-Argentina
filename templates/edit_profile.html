@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="bold-header center-align white-text mar-t">- EDIT PROFILE -</h3>
+<h3 class="bold-header section-title center-align white-text mar-t">- EDIT PROFILE -</h3>
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_profile', user_id=username._id) }}">
         <div class="card-panel">

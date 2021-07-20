@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="container">
-    <h3 class="bold-header center-align white-text mar-t">- BROWSE -</h3>
+    <h3 class="bold-header section-title center-align white-text mar-t">- BROWSE -</h3>
     <div class="row mar-t">
         <div class="row card-panel blue-grey darken-4">
             <form action="{{ url_for('search') }}" method="post" class="col s12">
@@ -22,7 +22,7 @@
             </form>
         </div>
     </div>
-    <h3 class="bold-header center-align white-text mar-t">- EXPERIENCES -</h3>
+    <h3 class="bold-header section-title center-align white-text mar-t">- EXPERIENCES -</h3>
     <div class="row exp mar-b">
         {% for experience in experiences %}
         <div class="col s12 m6 l6 xl6">

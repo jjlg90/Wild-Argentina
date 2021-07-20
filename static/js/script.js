@@ -31,7 +31,7 @@
 
     img_gallery(imgs);
 
-//Store password and repeat password values -- register.html
+//Validates select elements in forms -- add_experience.html
     function validateMaterializeSelect() {
         let classValid = {
             "border-bottom": "1px solid #4caf50",
