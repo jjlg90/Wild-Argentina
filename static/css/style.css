@@ -56,10 +56,6 @@ nav .bold-header {
     font-weight: 600;
     transition: all 0.35s ease-in-out;
 }
-.gradient {
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 99;
-}
 
 .wild {
     margin-top: 0;

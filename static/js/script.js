@@ -1,8 +1,13 @@
  $(document).ready(function(){
+     //Mobile navbar configuration
     $('.sidenav').sidenav({edge: "right"});
+    //Slider configuration -- index.html
     $('.slider').slider({height: 600,});
+    //Select dropdown -- add_experience.html
     $('select').formSelect();
+    //Modal trigger
     $('.modal').modal();
+    //Date picker -- register.html
     $('.datepicker').datepicker({
         format: "dd mmmm, yyyy",
         yearRange: [1920,2015],
@@ -11,6 +16,7 @@
             done: "Select"
         }
     });
+    //Date picker -- add_experience.html
     $('#experience_date').datepicker({
         format: "dd mmmm, yyyy",
         yearRange: [2015,2021],
@@ -25,7 +31,7 @@
 
     img_gallery(imgs);
 
-//Store password and repeat password values.
+//Store password and repeat password values -- register.html
     function validateMaterializeSelect() {
         let classValid = {
             "border-bottom": "1px solid #4caf50",
@@ -66,19 +72,11 @@
     }
 });
 
-//Control gallery images display.
-function img_gallery(imgs) {
-            // Get the expanded image
-            var expandImg = document.getElementById("expandedImg");
-            // Use the same src in the expanded image as the image being clicked on from the grid
-            expandImg.src = imgs.src;
-        }
-  
-//Store password and repeat password values.
+//Store password and repeat password values -- register.html / edit_profile.html
 let password = document.getElementById("password");
 let confirm_password = document.getElementById("confirm_password");
 
-//Compare values.
+//Compare values -- register.html / edit_profile.html
 function validatePassword(){
   if(password.value != confirm_password.value) {
     confirm_password.setCustomValidity("Passwords Don't Match");
@@ -89,3 +87,12 @@ function validatePassword(){
 
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
+
+//Control gallery images display -- view_experience.html
+function img_gallery(imgs) {
+            // Get the expanded image
+            var expandImg = document.getElementById("expandedImg");
+            // Use the same src in the expanded image as the image being clicked on from the grid
+            expandImg.src = imgs.src;
+        }
+  
