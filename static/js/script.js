@@ -69,22 +69,6 @@
     }
 });
 
-//Store password and repeat password values -- register.html / edit_profile.html
-let password = document.getElementById("password").innerHTML();
-let confirm_password = document.getElementById("confirm_password").innerHTML();
-
-//Compare values -- register.html / edit_profile.html
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-}
-
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
-
 //Control gallery images display -- view_experience.html
 function img_gallery(imgs) {
             // Get the expanded image

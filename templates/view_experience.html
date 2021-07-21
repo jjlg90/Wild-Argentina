@@ -61,3 +61,14 @@
 
 </div>
 {% endblock %}
+
+<!-- Google Maps API -->
+{% block map %}
+    <script
+        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp3FIRc6f1WgBKtu63UvR6_Ae21t_1MT4&callback=initMap">
+    </script>
+    <script src="{{ url_for('static', filename='js/maps.js') }}"></script>
+{% endblock %}

@@ -153,20 +153,19 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Compiled and minified Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Google Maps API -->
-    <script
-        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-    </script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp3FIRc6f1WgBKtu63UvR6_Ae21t_1MT4&callback=initMap">
-    </script>
-    <script src="{{ url_for('static', filename='js/maps.js') }}"></script>
     <!-- EmailJS API -->
     <script src="{{ url_for('static', filename='js/emailjs.js') }}"></script>
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% endblock %}
+    <!-- Active class controller -->
     {% block active %}
+    {% endblock %}
+    <!-- Google Maps API -- view_experience.html -->
+    {% block map %}
+    {% endblock %}
+    <!-- Repeat password -- register.html / edit_profile.html -->
+    {% block passwords %}
     {% endblock %}
 </body>
 

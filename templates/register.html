@@ -97,8 +97,13 @@
 
 {% endblock %}
 
+<!-- Active class controller -->
 {% block active %}
 <script>
     $('#li-reg').toggleClass('active');
 </script>
+{% endblock %}
+<!-- Repeat password -->
+{% block passwords %}
+<script src="{{ url_for('static', filename='js/passwords.js') }}"></script>
 {% endblock %}
