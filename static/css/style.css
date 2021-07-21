@@ -50,7 +50,8 @@ nav .bold-header {
     font-weight: 600;
     transition: all 0.35s ease-in-out;
 }
-.active a{
+
+.active a {
     background-color: #e2e600;
     color: black;
     font-weight: 600;
@@ -116,6 +117,7 @@ nav .bold-header {
 .section-title {
     font-size: 4rem;
 }
+
 .about-us h3 {
     padding-bottom: 1rem;
 }
@@ -152,16 +154,23 @@ nav .bold-header {
     height: 20rem;
 }
 
-.region-img{
+.region-img {
     background-size: cover;
     background-repeat: no-repeat;
     height: 20rem;
 }
 
-.region-summary {
+.summary {
     overflow-y: auto;
     height: 12rem;
 }
+
+.summary p {
+    font-size: 0.9rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 /*======================================== Start Footer ========================================*/
 
 .social-links p {
@@ -192,32 +201,33 @@ nav .bold-header {
     color: #fafafa;
 }
 
-#contact:hover{
+#contact:hover {
     color: #faff00;
     transition: all 0.35s ease-in-out;
 }
 
 #scroll-down {
-  position: absolute;
-  bottom: 1%;
-  left: 48%;
-  z-index: 2;
-  display: inline-block;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  color: #fff;
-  font-size: 4rem;
-  text-decoration: none;
-  transition: opacity .3s;
-  opacity: .5;
+    position: absolute;
+    bottom: 1%;
+    left: 48%;
+    z-index: 2;
+    display: inline-block;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: #fff;
+    font-size: 4rem;
+    text-decoration: none;
+    transition: opacity .3s;
+    opacity: .5;
 }
+
 #scroll-down:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 /*======================================== 404.html ========================================*/
 
-.error{
+.error {
     font-size: 22rem;
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
@@ -249,10 +259,6 @@ nav .bold-header {
     .section-title {
         font-size: 3rem;
     }
-
-    .region-summary {
-        font-size: 0.75rem;
-    }
 }
 
 @media screen and (max-width: 715px) {
@@ -272,8 +278,12 @@ nav .bold-header {
         font-size: 4rem;
     }
 
-    .region-summary {
+    .summary {
         height: 10rem;
+    }
+
+    .summary p {
+        font-size: 0.8rem;
     }
 
 }
@@ -299,8 +309,8 @@ nav .bold-header {
         font-size: 2.5rem;
     }
 
-    
-    .region-summary {
+
+    .summary {
         height: 9rem;
     }
 }
