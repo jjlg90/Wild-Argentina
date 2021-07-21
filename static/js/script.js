@@ -25,11 +25,8 @@
             done: "Select"
         }
     });
-    validatePassword();
 
     validateMaterializeSelect();
-
-    img_gallery(imgs);
 
 //Validates select elements in forms -- add_experience.html
     function validateMaterializeSelect() {
@@ -73,8 +70,8 @@
 });
 
 //Store password and repeat password values -- register.html / edit_profile.html
-let password = document.getElementById("password");
-let confirm_password = document.getElementById("confirm_password");
+let password = document.getElementById("password").innerHTML();
+let confirm_password = document.getElementById("confirm_password").innerHTML();
 
 //Compare values -- register.html / edit_profile.html
 function validatePassword(){
