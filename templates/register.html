@@ -2,10 +2,12 @@
 {% block content %}
 
 <h3 class="bold-header section-title center-align white-text mar-t">- REGISTER -</h3>
+
+<!-- Register form -->
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
         <div class="card-panel">
-            <!--username-->
+            <!-- Username -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-plus prefix blue-grey-text text-darken-4"></i>
@@ -14,7 +16,7 @@
                     <label for="username">Username</label>
                 </div>
             </div>
-            <!--password-->
+            <!-- Password -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-lock prefix blue-grey-text text-darken-4"></i>
@@ -23,7 +25,7 @@
                     <label for="password">Password</label>
                 </div>
             </div>
-            <!--repeat password-->
+            <!-- Repeat password -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-lock prefix blue-grey-text text-darken-4"></i>
@@ -32,7 +34,7 @@
                     <label for="confirm_password">Confirm Password</label>
                 </div>
             </div>
-            <!--birthdate-->
+            <!-- Birthdate -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar prefix blue-grey-text text-darken-4"></i>
@@ -41,7 +43,7 @@
                     <label for="birthdate">Birthdate</label>
                 </div>
             </div>
-            <!--nationality-->
+            <!-- Nationality -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-flag prefix blue-grey-text text-darken-4"></i>
@@ -50,7 +52,7 @@
                     <label for="nationality">Nationality</label>
                 </div>
             </div>
-            <!--gender-->
+            <!-- Gender -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-venus-mars prefix blue-grey-text text-darken-4"></i>
@@ -59,16 +61,16 @@
                     <label for="gender">Gender</label>
                 </div>
             </div>
-            <!--avatar picture-->
+            <!-- Profile picture-->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-id-badge prefix blue-grey-text text-darken-4"></i>
                     <input id="user_image" name="user_image" type="text" class="validate"
                         required>
-                    <label for="user_image">Paste your avatar picture url here!</label>
+                    <label for="user_image">Paste your profile picture url here!</label>
                 </div>
             </div>
-            <!--email-->
+            <!-- Email -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-at prefix blue-grey-text text-darken-4"></i>
@@ -77,7 +79,7 @@
                     <label for="email">Email</label>
                 </div>
             </div>
-            <!--submit-->
+            <!-- Submit -->
             <div class="row">
                 <button type="submit" class="col s12 btn-large blue-grey darken-4">
                     Register <i class="fas fa-sign-in-alt"></i>
@@ -86,7 +88,7 @@
         </div>
     </form>
 </div>
-
+<!-- Link to login.html -->
 <div class="row mar-b">
     <div class="col s12">
         <p class="white-text center-align">

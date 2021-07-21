@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="bold-header center-align white-text section-title mar-t">- LOGIN -</h3>
+<!-- Log In form -->
+
+<h3 class="bold-header center-align white-text section-title mar-t">- LOG IN -</h3>
 <div class="row mar-b">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
         <div class="card-panel">
-            <!--username-->
+            <!-- Username -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-cog prefix blue-grey-text text-darken-4"></i>
@@ -14,7 +16,7 @@
                     <label for="username">Username</label>
                 </div>
             </div>
-            <!--password-->
+            <!-- Password -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-lock prefix blue-grey-text text-darken-4"></i>
@@ -23,7 +25,7 @@
                     <label for="password">Password</label>
                 </div>
             </div>
-            <!--submit-->
+            <!-- Submit -->
             <div class="row">
                 <button type="submit" class="col s12 btn-large blue-grey darken-4">
                    Log In<i class="fas fa-sign-in-alt"></i>
@@ -32,7 +34,7 @@
         </div>
     </form>
 </div>
-
+<!-- Link to register.html -->
 <div class="row mar-b">
     <div class="col s12">
         <p class="white-text center-align">

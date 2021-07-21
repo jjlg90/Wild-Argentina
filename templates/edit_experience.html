@@ -3,12 +3,12 @@
 
 <h3 class="bold-header section-title center-align white-text mar-t">EDIT EXPERIENCE</h3>
 
-
+<!-- Edit experience form -->
 <div class="row mar-b">
     <form class="col s12 m8 offset-m2" method="POST"
         action="{{ url_for('edit_experience', experience_id=experience._id) }}">
         <div class="card-panel">
-            <!--type select-->
+            <!-- Type select -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-mountain prefix"></i>
@@ -21,7 +21,7 @@
                     <label for="category_name">Experience Type</label>
                 </div>
             </div>
-            <!--experience title-->
+            <!-- Experience title -->
             <div class="row">
                 <div class="input-field col s12">
                     <div class="input-field col s12">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <!--region select-->
+            <!-- Region select -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-map-marker-alt prefix"></i>
@@ -45,7 +45,7 @@
                     <label for="category_name">Region</label>
                 </div>
             </div>
-            <!--location-->
+            <!-- Location -->
             <div class="row">
                 <div class="input-field col s12">
                     <div class="input-field col s12">
@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-            <!--date-->
+            <!-- Date -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar prefix blue-grey-text text-darken-4"></i>
@@ -64,7 +64,7 @@
                     <label for="experience_date">Date</label>
                 </div>
             </div>
-            <!--summary-->
+            <!-- Summary -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix"></i>
@@ -73,7 +73,7 @@
                     <label for="experience_description">Summary</label>
                 </div>
             </div>
-            <!--#1 Image URL-->
+            <!-- #1 Image URL -->
             <div class="row">
                 <div class="input-field col s12">
                     <div class="input-field col s12">
@@ -84,7 +84,7 @@
                     </div>
                 </div>
             </div>
-            <!--#2 Image URL-->
+            <!-- #2 Image URL -->
             <div class="row">
                 <div class="input-field col s12">
                     <div class="input-field col s12">
@@ -95,7 +95,7 @@
                     </div>
                 </div>
             </div>
-            <!--#3 Image URL-->
+            <!-- #3 Image URL -->
             <div class="row">
                 <div class="input-field col s12">
                     <div class="input-field col s12">
@@ -106,7 +106,7 @@
                     </div>
                 </div>
             </div>
-            <!--#4 Image URL-->
+            <!-- #4 Image URL -->
             <div class="row">
                 <div class="input-field col s12">
                     <div class="input-field col s12">
@@ -117,7 +117,7 @@
                     </div>
                 </div>
             </div>
-            <!--#5 Image URL-->
+            <!-- #5 Image URL -->
             <div class="row">
                 <div class="input-field col s12">
                     <div class="input-field col s12">
@@ -128,7 +128,7 @@
                     </div>
                 </div>
             </div>
-            <!--Latitude-->
+            <!-- Latitude -->
             <div class="row">
                 <div class="input-field col s12">
                     <div class="input-field col s12">
@@ -139,7 +139,7 @@
                     </div>
                 </div>
             </div>
-            <!--Longitude-->
+            <!-- Longitude -->
             <div class="row">
                 <div class="input-field col s12">
                     <div class="input-field col s12">
@@ -150,14 +150,14 @@
                     </div>
                 </div>
             </div>
-            <!--buttons-->
+            <!-- Buttons -->
             <div class="row">
-                <!--submit button-->
+                <!-- Submit button -->
                 <button type="submit" class="col s12 btn-large blue-grey darken-4">
                     <i class="fas fa-edit"></i> Edit
                 </button>
             </div>
-            <!--cancel button-->
+            <!-- Cancel button -->
             <div class="row">
                 <button href="{{ url_for('get_experiences') }}" class="col s12 btn-large red darken-4">
                     <i class="fas fa-times"></i> Cancel

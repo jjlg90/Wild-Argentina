@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
     <!-- Responsive Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ url_for('static', filename='images/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ url_for('static', filename='images/favicon/favicon-16x16.png') }}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <!-- EmailJS initializer -->
@@ -32,7 +34,7 @@
 
     <header>
 
-        <!--Navbar-->
+        <!-- Navbar -->
         <div class="navbar-fixed">
             <nav class="nav-extended blue-grey text-shadow darken-4">
                 <div class="nav-wrapper">
@@ -56,7 +58,7 @@
             </nav>
         </div>
 
-        <!--Mobile Navbar-->
+        <!-- Mobile Navbar -->
         <ul class="sidenav" id="mobile-demo">
             <h4 class="center-align">WILD</br>ARGENTINA</h4>
             <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -76,7 +78,7 @@
     </header>
 
     <section>
-        <!--flash messages-->
+        <!-- Flash messages -->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
@@ -88,12 +90,14 @@
         {% endwith %}
     </section>
 
+    <!-- Main Content -->
     <main class="blue-grey darken-3">
         {% block content %}
 
         {% endblock %}
     </main>
 
+    <!-- Footer -->
     <footer class="page-footer blue-grey darken-3">
         <div class="footer-copyright blue-grey darken-4">
             <div class="container">

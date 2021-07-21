@@ -2,7 +2,9 @@
 {% block content %}
 <div class="container">
 
+    <!-- Experience title -->
     <h3 class="bold-header section-title center-align white-text mar-t" id="xp_name" style="text-transform: uppercase; margin-bottom: 0rem;">- {{experience_id.experience_name}} -</h3>
+    <!-- Experience author -->
     <p class="center-align white-text" style="font-size: 1rem;"><em>by {{experience_id.by}}</em></p>
     <hr>
 
@@ -17,18 +19,22 @@
                 </div>
             </div>
             <div class="row">
+                <!-- #2 Image thumbnail -->
                 <div class="col l3 m3 s3 grid">
                     <img class="responsive-img" src="{{ experience_id.picture2 }}" alt="Image #2"
                         onclick="img_gallery(this);">
                 </div>
+                <!-- #3 Image thumbnail -->
                 <div class="col l3 m3 s3 grid">
                     <img class="responsive-img" src="{{ experience_id.picture3 }}" alt="Image #3"
                         onclick="img_gallery(this);">
                 </div>
+                <!-- #4 Image thumbnail -->
                 <div class="col l3 m3 s3 grid">
                     <img class="responsive-img" src="{{ experience_id.picture4 }}" alt="Image #4"
                         onclick="img_gallery(this);">
                 </div>
+                <!-- #5 Image thumbnail -->
                 <div class="col l3 m3 s3 grid"">
                     <img class=" responsive-img" src="{{ experience_id.picture5 }}" alt="Image #5"
                     onclick="img_gallery(this);">
@@ -37,6 +43,7 @@
         </div>
         <div class="col xl4 l12 m12 s12">
             <div class="card blue-grey darken-4 xp_view">
+                <!-- Experience content -->
                 <div class="card-content white-text">
                     <h5 class="bold-header center-align white-text mar-t mar-b" id="xp_location">{{experience_id.location_name}}<h5>
                     <hr>
@@ -48,6 +55,7 @@
                     <hr>
                     <p><em>{{experience_id.experience_date}}</em></p>
                 </div>
+                <!-- Lat & Lng for the map -->
                 <div class="hide">
                      <span id="lat">{{ experience_id.latitude }}</span>
                      <span id="lng">{{ experience_id.longitude }}</span>
@@ -56,6 +64,7 @@
         </div>
     </div>
 
+    <!-- Map showing experience's location -->
     <div class="row mar-b center-align">
             <div id="map" onload="viewExperienceMap()">
             </div>

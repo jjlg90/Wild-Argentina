@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <section>
+        <!-- Hero image slider -->
         <div class="slider">
     <ul class="slides">
       <li>
@@ -51,15 +52,19 @@
   <a id="scroll-down" class="hide-on-med-and-down" href="{{ url_for('index') }}#navigation">▼</a>
     </section>
 
+    <!-- Navigation links -->
     <section id="navigation"class="navigation">
+        <!-- Link to experiences.html -->
         <a href="{{ url_for('get_experiences') }}">
             <h2 class="bold-header center-align" style="padding-top: 2rem; margin-top: 1rem;">- <span>B</span>ROWSE -</h2>
         </a>
         <p>Search for experiences or browse through every adventure, place, food or tradition listed on the website!</p>
+        <!-- Link to regions.html -->
         <a href="{{ url_for('get_regions') }}">
             <h2 class="bold-header center-align">- <span>D</span>ISCOVER -</h2>
         </a>
         <p>Planning a trip? Check attractions in every region of the country.</p>
+        <!-- Redirects user to add_experience.html if logged in, else to login.html -->
         {% if session.user %}
             <a href="{{ url_for('add_experience') }}">
         {% else %}
@@ -70,6 +75,7 @@
         <p style="padding-bottom: 3rem;">Want to be a part of our community? Just log in and share your experiences with us!</p>
     </section>
 
+    <!-- About WA section -->
     <section id="about-us"class="about-us">
         <h3 class="bold-header section-title center-align white-text">- ABOUT WA -</h3>
         <div class="container">
