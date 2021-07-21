@@ -40,10 +40,10 @@ def browse():
     return render_template("browse.html", experiences=experiences)
 
 
-@app.route("/get_regions")
-def get_regions():
+@app.route("/discover")
+def discover():
     regions = list(mongo.db.regions.find())
-    return render_template("regions.html", regions=regions)
+    return render_template("discover.html", regions=regions)
 
 
 # Experiences by region
