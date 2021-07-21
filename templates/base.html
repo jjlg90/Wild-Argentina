@@ -42,7 +42,6 @@
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down" style="padding-right: 1rem;">
                         <li id="li-ind"><a href="{{ url_for('index') }}">Home</a></li>
-                        <li id="li-abt"><a href="{{ url_for('index') }}#about-us">About</a></li>
                         <li id="li-xp"><a href="{{ url_for('get_experiences') }}">Browse</a></li>
                         <li id="li-dcv"><a href="{{ url_for('get_regions') }}">Discover</a></li>
                         {% if session.user %}
@@ -53,6 +52,7 @@
                         <li id="li-reg"><a href="{{ url_for('register') }}">Register</a></li>
                         <li id="li-lgi"><a class="log" href="{{ url_for('login') }}">Log In</a></li>
                         {% endif %}
+                        <li><a data-target="modal1" class="modal-trigger">Contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -62,7 +62,6 @@
         <ul class="sidenav" id="mobile-demo">
             <h4 class="center-align">WILD</br>ARGENTINA</h4>
             <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('index') }}#about-us">About</a></li>
             <li><a href="{{ url_for('get_experiences') }}">Browse</a></li>
             <li><a href="{{ url_for('get_regions') }}">Discover</a></li>
             {% if session.user %}
@@ -73,6 +72,7 @@
             <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="{{ url_for('login') }}">Log In</a></li>
             {% endif %}
+            <li><a data-target="modal1" class="modal-trigger">Contact</a></li>
         </ul>
 
     </header>
@@ -101,8 +101,7 @@
     <footer class="page-footer blue-grey darken-3">
         <div class="footer-copyright blue-grey darken-4">
             <div class="container">
-                <div class="row social-links">
-                    <p>©2021 JJLG</p>
+                <div class="row social-links">             
                     <ul>
                         <li>
                             <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -114,9 +113,7 @@
                             <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                         </li>
                     </ul>
-                    <a data-target="modal1" class="grey-text modal-trigger text-lighten-4 btn-flat">
-                        <p id="contact">Contact</p>
-                    </a>
+                    <p>©2021 JJLG</p>
                 </div>
             </div>
         </div>

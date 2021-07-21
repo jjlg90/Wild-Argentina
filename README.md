@@ -193,8 +193,6 @@ $ git clone https://github.com/jjlg90/Real-Bread
 #### Media
 Pictures and videos were taken from the following websites.
 
-* [Colors of Argentina - 4K Drone Travel Video](https://www.youtube.com/watch?v=8OvfmZ_TTkM&t=51s&ab_channel=JimWinter), by Jim Winter 
-
 ### Acknowledgements
 
 * My Mentor Oluwafemi Medale who guided me through development.
