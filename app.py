@@ -45,48 +45,12 @@ def discover():
     regions = list(mongo.db.regions.find())
     return render_template("discover.html", regions=regions)
 
-
-# Experiences by region
-
-
-@app.route("/north-west")
-def northwest():
+@app.route("/region")
+def region():
     regions = list(mongo.db.regions.find())
     experiences = list(mongo.db.experiences.find())
     return render_template(
-        "north-west.html", regions=regions, experiences=experiences)
-
-
-@app.route("/north-east")
-def northeast():
-    regions = list(mongo.db.regions.find())
-    experiences = list(mongo.db.experiences.find())
-    return render_template(
-        "north-east.html", regions=regions, experiences=experiences)
-
-
-@app.route("/cuyo")
-def cuyo():
-    regions = list(mongo.db.regions.find())
-    experiences = list(mongo.db.experiences.find())
-    return render_template(
-        "cuyo.html", regions=regions, experiences=experiences)
-
-
-@app.route("/pampas")
-def pampas():
-    regions = list(mongo.db.regions.find())
-    experiences = list(mongo.db.experiences.find())
-    return render_template(
-        "pampas.html", regions=regions, experiences=experiences)
-
-
-@app.route("/patagonia")
-def patagonia():
-    regions = list(mongo.db.regions.find())
-    experiences = list(mongo.db.experiences.find())
-    return render_template(
-        "patagonia.html", regions=regions, experiences=experiences)
+        "region.html", regions=regions, experiences=experiences)
 
 
 @app.route("/register", methods=["GET", "POST"])

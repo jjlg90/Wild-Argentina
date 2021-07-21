@@ -22,8 +22,8 @@
             </div>
             <div class="row hide-on-med-and-up"></div>
             <div class="card-action grey center-align darken-4">
-                <!-- Conditional If to redirect user to proper region page -->
-                <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('browse', query=region.region_name) }}">Discover
+                <!-- Redirect user to proper region page -->
+                <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('region', query=region.region_name) }}">Discover
                     <span class="hide-on-med-and-down">Experiences</span></a>
             </div>
         </div>
@@ -44,7 +44,7 @@
             <div class="row hide-on-med-and-up"></div>
             <div class="card-action grey center-align darken-4">
                 <!-- Conditional If to redirect user to proper region page -->
-               <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('browse', query=region.region_name) }}">Discover
+               <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('region', query=region.region_name) }}">Discover
                     <span class="hide-on-med-and-down">Experiences</span></a>
             </div>
         </div>
