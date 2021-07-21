@@ -5,68 +5,79 @@
 
 <div class="container">
 
+    {% for region in regions %}
+    {% if loop.index % 2 != 0 %}
+    <div class="row">
 
-    <div class="row s12 m7 mar-b">
-        <div class="col">
-            {% for region in regions %}
-                {% if loop.index % 2 != 0 %}
-                    <div class="card horizontal">
-                        <div class="card-image">
-                            <img src="{{ region.img_url }}" alt="Region Image"> <!-- Region Image -->
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <h4 class="header bold-header center">{{ region.region_name }}</h4>
-                                <p>{{ region.region_summary }}</p>
-                            </div>
-                            <div class="card-action blue-grey darken-4">
-                                {% if region.region_name|lower == 'north west'|lower %}
-                                    <a class="yellow-text darken-2 left" href="{{ url_for('northwest') }}">Discover Experiences</a>
-                                {% elif region.region_name|lower == 'north east'|lower %}
-                                    <a class="yellow-text darken-2 left" href="{{ url_for('northeast') }}">Discover Experiences</a>
-                                {% elif region.region_name|lower == 'cuyo'|lower %}
-                                    <a class="yellow-text darken-2 left" href="{{ url_for('cuyo') }}">Discover Experiences</a>
-                                {% elif region.region_name|lower == 'pampas'|lower %}
-                                    <a class="yellow-text darken-2 left" href="{{ url_for('pampas') }}">Discover Experiences</a>
-                                {% else %}
-                                    <a class="yellow-text darken-2 left" href="{{ url_for('patagonia') }}">Discover Experiences</a>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
+        <div class="col m1"></div>
+
+        <div class="col m5 s12 region-img" style="background-image: url('{{ region.img_url }}')">
+            </div>
+
+        <div class="col m5 s12 white-text grey darken-4" style="height: 20rem;">
+            <h4 class="header bold-header center">{{ region.region_name }}</h4>
+            <div class="region-summary">
+            <p>{{ region.region_summary }}</p>
+            </div>
+            <div class="row hide-on-med-and-up"></div>
+            <div class="card-action grey center-align darken-4">
+                {% if region.region_name|lower == 'north west'|lower %}
+                <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('northwest') }}">Discover
+                    <span class="hide-on-med-and-down">Experiences</span></a>
+                {% elif region.region_name|lower == 'north east'|lower %}
+                <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('northeast') }}">Discover <span class="hide-on-med-and-down">Experiences</span></a>
+                {% elif region.region_name|lower == 'cuyo'|lower %}
+                <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('cuyo') }}">Discover <span class="hide-on-med-and-down">Experiences</span></a>
+                {% elif region.region_name|lower == 'pampas'|lower %}
+                <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('pampas') }}">Discover <span class="hide-on-med-and-down">Experiences</span></a>
                 {% else %}
-                    <div class="card horizontal">
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <h4 class="header bold-header center">{{ region.region_name }}</h4>
-                                <p>{{ region.region_summary }}</p>
-                            </div>
-                            <div class="card-action blue-grey darken-4">
-                                {% if region.region_name|lower == 'north west'|lower %}
-                                    <a class="yellow-text darken-2 left" href="{{ url_for('northwest') }}">Discover Experiences</a>
-                                {% elif region.region_name|lower == 'north east'|lower %}
-                                    <a class="yellow-text darken-2 left" href="{{ url_for('northeast') }}">Discover Experiences</a>
-                                {% elif region.region_name|lower == 'cuyo'|lower %}
-                                    <a class="yellow-text darken-2 left" href="{{ url_for('cuyo') }}">Discover Experiences</a>
-                                {% elif region.region_name|lower == 'pampas'|lower %}
-                                    <a class="yellow-text darken-2 left" href="{{ url_for('pampas') }}">Discover Experiences</a>
-                                {% else %}
-                                    <a class="yellow-text darken-2 left" href="{{ url_for('patagonia') }}">Discover Experiences</a>
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="card-image">
-                            <img src="{{ region.img_url }}">
-                        </div>
-                    </div>
+                <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('patagonia') }}">Discover <span class="hide-on-med-and-down">Experiences</span></a>
                 {% endif %}
-            {% endfor %}
+            </div>
         </div>
+
+        <div class="col m1"></div>
     </div>
+    {% else %}
+    <div class="row">
 
-    {% endblock %}
+        <div class="col m1"></div>
 
-    {% block active %}
+        <div class="col m5 s12 white-text grey darken-4" style="height: 20rem;">
+            <h4 class="header bold-header center">{{ region.region_name }}</h4>
+            <div class="region-summary">
+            <p>{{ region.region_summary }}</p>
+            </div>
+            <div class="row hide-on-med-and-up"></div>
+            <div class="card-action grey center-align darken-4">
+                {% if region.region_name|lower == 'north west'|lower %}
+                <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('northwest') }}">Discover
+                    <span class="hide-on-med-and-down">Experiences</span></a>
+                {% elif region.region_name|lower == 'north east'|lower %}
+                <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('northeast') }}">Discover <span class="hide-on-med-and-down">Experiences</span></a>
+                {% elif region.region_name|lower == 'cuyo'|lower %}
+                <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('cuyo') }}">Discover <span class="hide-on-med-and-down">Experiences</span></a>
+                {% elif region.region_name|lower == 'pampas'|lower %}
+                <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('pampas') }}">Discover <span class="hide-on-med-and-down">Experiences</span></a>
+                {% else %}
+                <a class="yellow darken-1 black-text bold-header btn-small" href="{{ url_for('patagonia') }}">Discover <span class="hide-on-med-and-down">Experiences</span></a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col m5 s12 region-img" style="background-image: url('{{ region.img_url }}')">
+        </div>
+
+        <div class="col m1"></div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <div class="row mar-b"></div>
+</div>
+
+{% endblock %}
+
+{% block active %}
 <script>
     $('#li-dcv').toggleClass('active');
 </script>
