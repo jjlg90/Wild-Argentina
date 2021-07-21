@@ -6,7 +6,7 @@
 
     <!-- Search bar. Query through experiences index -->
     <div class="row card-panel blue-grey darken-4">
-        <form action="{{ url_for('search') }}" method="post" class="col s12">
+        <form action="{{ url_for('browse') }}" method="GET" class="col s12">
 
             <div class="input-field col s12 m12 l12 xl12">
                 <i class="fas fa-search prefix yellow-text"></i>
@@ -14,7 +14,7 @@
                 <label for="query">Filter</label>
             </div>
             <div class="col s12 m12 l12 xl12 center-align">
-                <a href="{{ url_for('get_experiences') }}" class="red btn-small">RESET</a>
+                <a href="{{ url_for('browse') }}" class="red btn-small">RESET</a>
                 <button type="submit" class="green darken-2 btn-small">
                     <i class="fas fa-search left"></i> Search
                 </button>
@@ -69,7 +69,7 @@
                 <div class="modal-footer grey darken-3">
                     <a href="{{ url_for('delete_experience', experience_id=experience._id) }}"
                         class="left modal-close btn red waves-effect waves-green btn-flat white-text">Delete</a>
-                    <a href="{{ url_for('get_experiences') }}"
+                    <a href="{{ url_for('browse') }}"
                         class="right modal-close waves-effect btn green waves-green btn-flat white-text">Cancel</a>
                 </div>
             </div>
@@ -82,6 +82,6 @@
 <!-- Active class controller -->
 {% block active %}
 <script>
-    $('#li-xp').toggleClass('active');
+    $('#li-browse').toggleClass('active');
 </script>
 {% endblock %}

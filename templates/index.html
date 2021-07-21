@@ -55,7 +55,7 @@
     <!-- Navigation links -->
     <section id="navigation"class="navigation">
         <!-- Link to experiences.html -->
-        <a href="{{ url_for('get_experiences') }}">
+        <a href="{{ url_for('browse') }}">
             <h2 class="bold-header center-align" style="padding-top: 2rem; margin-top: 1rem;">- <span>B</span>ROWSE -</h2>
         </a>
         <p>Search for experiences or browse through every adventure, place, food or tradition listed on the website!</p>
@@ -105,11 +105,5 @@
 {% block active %}
 <script>
     $('#li-ind').toggleClass('active');
-
-    $('#li-abt').click(function(){
-        $('#li-ind').removeClass('active');
-        $('#li-abt').toggleClass('active');
-        })
-    
 </script>
 {% endblock %}

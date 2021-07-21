@@ -42,7 +42,7 @@
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down" style="padding-right: 1rem;">
                         <li id="li-ind"><a href="{{ url_for('index') }}">Home</a></li>
-                        <li id="li-xp"><a href="{{ url_for('get_experiences') }}">Browse</a></li>
+                        <li id="li-browse"><a href="{{ url_for('browse') }}">Browse</a></li>
                         <li id="li-dcv"><a href="{{ url_for('get_regions') }}">Discover</a></li>
                         {% if session.user %}
                         <li id="li-shr"><a href="{{ url_for('add_experience') }}">Share</a></li>
@@ -62,7 +62,7 @@
         <ul class="sidenav" id="mobile-demo">
             <h4 class="center-align">WILD</br>ARGENTINA</h4>
             <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('get_experiences') }}">Browse</a></li>
+            <li><a href="{{ url_for('browse') }}">Browse</a></li>
             <li><a href="{{ url_for('get_regions') }}">Discover</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('add_experience') }}">Share</a></li>

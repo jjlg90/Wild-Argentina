@@ -29,18 +29,15 @@ def page_not_found(e):
     return render_template("404.html"), 404
 
 
-@app.route("/get_experiences")
-def get_experiences():
-    experiences = list(mongo.db.experiences.find())
-    return render_template("experiences.html", experiences=experiences)
-
-
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    query = request.form.get("query")
-    experiences = list(mongo.db.experiences.find(
-        {"$text": {"$search": query}}))
-    return render_template("experiences.html", experiences=experiences)
+@app.route("/browse")
+def browse():
+    query = request.args.get("query")
+    if query:
+        experiences = list(mongo.db.experiences.find(
+            {"$text": {"$search": query}}))
+    else:
+        experiences = list(mongo.db.experiences.find())
+    return render_template("browse.html", experiences=experiences)
 
 
 @app.route("/get_regions")
