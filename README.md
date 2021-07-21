@@ -1,59 +1,201 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1>Wild Argentina</h1>
+<h1>Backend Development Milestone Project</h1>
 
-Welcome jjlg90,
+![responsive-design]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+This project consists of a website for traveler's community WILD ARGENTINA, where users can browse, discover and share experiences lived in different regions of Argentina. WILD ARGENTINA is all about connection to nature, tradition and Argentina's vast diversity.
+Check out the [Live Project]()
 
-## Gitpod Reminders
+#### Disclaimer
+WILD ARGENTINA traveler community does not exist. The creation of this project is purely educative. 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## User Experience (UX)
 
-`python3 -m http.server`
+## User stories
 
-A blue button should appear to click: _Make Public_,
+### First time visitor
+* As a First Time Visitor, I expect the purpose of the website to be explicit.
+* As a First Time Visitor, I consider smooth navigation through content to be a key aspect.
+* As a First Time Visitor, I want the content of the website to be relevant and concise. 
+* As a First Time Visitor, I would like to browse places, foods and experiences.
 
-Another blue button should appear to click: _Open Browser_.
+### Returning visitor
+* As a Returning Visitor, I expect to see new entries and updates.
+* As a Returning Visitor, I want to be able to share my own experiences.
+* As a Returning Visitor, I would like to check activity on social media platforms.
+* As a Returning Visitor, I want to check each experience geographic location.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+### Frequent user
+* As a Frequent User, I would like to interact with other members of the community.
+* As a Frequent User, I want to have access to new features.
+* As a Frequent User, I expect to have control over my information.
+* As a Frequent User, I want to be able to get the exact location for each experience.
+* As a Frequent User, I would like to have the possibility of saving experiences for quick access.
+* As a Frequent User, I want to be able to easily share experiences.
 
-Another blue button should appear to click: _Open Browser_.
+ 
+ ### Strategy
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+ #### Project Goals 
+ To provide WILD ARGENTINA with a presentation website, where its users can can browse, discover and share experiences.
+ 
+ #### Developer Goals: 
+ To showcase an attractive, well-designed flask based python application that's easily updated and maintained.
 
-To log into the Heroku toolbelt CLI:
+### Scope 
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#### Features
+* The project is presented in a multipage layout, based on flask and controlled by python to communicate to a backend database served by MongoDB.
+Rendered templates customized with HTML5, CSS3, Javascript and Jinja.
+* Fully responsive on different screen sizes.
+* It counts with a contact form inside a modal pop-up.
+* Full CRUD functionality. (Create, Read, Update and Delete experiences and profiles)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+#### Future Features
+* User's travel journal. For those users who would like to read about someone else's adventures.
+* Trip maker functionality, where users will be able to make a schedule of activities.
+* Experience's comment section.
+* Expanded information are for each region.
+* Awareness section. Where users can be informed on how to preserve the enviroments visited, and how to help the local communities.
+* Aesthetic animations.
 
-## Updates Since The Instructional Video
+### Structure 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+#### Information
+ The content is distributed throughout several pages.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+* Main page:
+    * Image slider showcasing organization's header and the different regions to discover.
+    * Navigation section, where the user can choose to Browse, Discover or Share experiences.
+    * About WA section, where the mission and objectives of the organization are made known to the user.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+* Discover:
+    * List of regions, alongside with images and description, for the user to choose one and have access to all experiences in each one.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+* Browse:
+    * Search bar to query the experience collection in the database.
+    * Experiences section, where all latest experiences are displayed in big clickable cards.
+ 
+* Experience:
+    * When an experience is selected, the user will be redirected to the experience page, where pictures, information, upload date and exact geographical location is displayed.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Skeleton
+For the wireframes, Figma software has been used to lay out the foundations of the website.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+Check out the [Wireframes]() here!
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Surface
+ The content is easy to navigate and is neatly divided in sections.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+ The colour palette is dark, looking to highlight the brightness of the images to attract attention to them. 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+* Blue and Grey for backgrounds
+    * #263238
+    * #607d8b 
+    * #546e7a 
+    * #455a64 
+    * #37474f 
+    * #424242
+    * #212121
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* White and Yellow for fonts
+    * #fafafa
+    * #faff00 
 
----
+* Red and Green for buttons
+    * #f44336
+    * #4caf50
 
-Happy coding!
+
+
+The fonts are:
+* Montserrat. Bold and with a strong connection to the content. "The old posters and signs in the traditional Montserrat neighborhood of Buenos Aires 
+  inspired Julieta Ulanovsky to design this typeface and rescue the beauty of urban typography that emerged in the first half of the twentieth century."
+* Lora. In order to provide a nice contrast with the headers, with its brushed curves and roots in calligraphy, Lora is a well-balanced contemporary serif.
+
+
+## Technologies
+
+### Languages
+
+-  [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-  [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-  [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+-  [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+### Other Technologies
+
+* [Jinja 3.0.1](https://en.wikipedia.org/wiki/Jinja_(template_engine)) 
+    * Template engine for python.
+* [Flask 2.0.1](https://en.wikipedia.org/wiki/Flask_(web_framework)) 
+    * Web framework for python.
+* [MaterializeCSS 1.0.0](https://materializecss.com/) 
+    * Responsive design and css styling.
+* [MongoDB](https://en.wikipedia.org/wiki/MongoDB)
+    * Document oriented database.
+* [Heroku](https://en.wikipedia.org/wiki/Heroku)
+    * Cloud platform service.
+* [Jquery CDN](https://code.jquery.com)
+    * Javascript.
+* [W3Schools](https://www.w3schools.com/)
+    * CSS documentation.
+* [Figma:](https://figma.com/)
+    - Figma was used to create the wireframes.
+* [GitHub:](https://github.com/)
+    * Code repository.
+* [Gitpod](https://gitpod.io/)
+    * Gitpod was used as IDE and for version control. 
+* [Font Awesome:](https://fontawesome.com/)
+    * Font Awesome was used solely for social media icons in footer.
+* [Google Fonts:](https://fonts.google.com/)
+    * Google fonts was used to import "Montserrat" and "Lora" family fonts.
+* [Chrome Developer Tools:](https://developers.google.com/web/tools/chrome-devtools)
+    * Used to debug and style.
+* [EmailJS:](https://www.emailjs.com/)
+    * Provided backend email service to contact form.
+* [Google Maps JavaScript API:](https://developers.google.com/maps)
+    * Provided backend map service.
+
+## Testing
+
+__[Click here to read testing documentation.](testing.md)__
+
+## Deployment
+
+### Heroku Pages
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/jjlg90/Wild-Argentina)
+2. At the top of the Repository, just above the "Settings" button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/jjlg90/Wild-Argentina)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/jjlg90/Real-Bread
+```
+
+7. Press Enter. Your local clone will be created.
+
+## Credits
+
+#### Media
+Pictures and videos were taken from the following websites.
+
+* [Colors of Argentina - 4K Drone Travel Video](https://www.youtube.com/watch?v=8OvfmZ_TTkM&t=51s&ab_channel=JimWinter), by Jim Winter 
+
+### Acknowledgements
+
+* My Mentor Oluwafemi Medale who guided me through development.
+* [Stack Overflow](https://stackoverflow.com/) helped me to find answers about structure and styling from other people's inquiries, posts and threads.
