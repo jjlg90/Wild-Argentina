@@ -57,7 +57,9 @@
                         <span class="by-user">by {{ experience.by}}</span>
                     </strong>
                     <strong class="bold-header">{{ experience.category_name }} / {{ experience.region_name }}</strong>
-                    <p>{{ experience.experience_description }}</p>
+                    <div class="xp-summary">
+                        <p>{{ experience.experience_description }}</p>
+                    </div>
                 </div>
                 <div class="card-action blue-grey darken-4">
                     <a class="yellow-text darken-2 left" href="{{ url_for('view_experience', experience_id=experience._id) }}">Read More</a>

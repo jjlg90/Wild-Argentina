@@ -160,6 +160,13 @@ nav .bold-header {
     height: 20rem;
 }
 
+.xp-summary {
+    word-break: break-all;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .summary {
     overflow-y: auto;
     height: 12rem;
