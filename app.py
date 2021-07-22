@@ -7,7 +7,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
-
+from functools import wraps
 
 app = Flask(__name__)
 
@@ -29,6 +29,18 @@ def page_not_found(e):
     return render_template("404.html"), 404
 
 
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash("You need to login first")
+            return redirect(url_for('login'))
+
+    return wrap
+
+
 @app.route("/browse")
 def browse():
     query = request.args.get("query")
@@ -45,10 +57,17 @@ def discover():
     regions = list(mongo.db.regions.find())
     return render_template("discover.html", regions=regions)
 
+
 @app.route("/region")
 def region():
-    regions = list(mongo.db.regions.find())
-    experiences = list(mongo.db.experiences.find())
+    query = request.args.get("query")
+    if query:
+        regions = list(mongo.db.regions.find())
+        experiences = list(mongo.db.experiences.find(
+            {"$text": {"$search": query}}))
+    else:
+        regions = list(mongo.db.regions.find())
+        experiences = list(mongo.db.experiences.find())
     return render_template(
         "region.html", regions=regions, experiences=experiences)
 
@@ -157,6 +176,7 @@ def delete_profile(user_id):
 
 
 @app.route("/logout")
+@login_required
 def logout():
     # remove user from session cookies
     flash("You have been logged out")
@@ -165,6 +185,7 @@ def logout():
 
 
 @app.route("/add_experience", methods=["GET", "POST"])
+@login_required
 def add_experience():
     if request.method == "POST":
         experience = {
