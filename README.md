@@ -222,6 +222,15 @@ Create Heroku application:
 #### Media
 Pictures and videos were taken from the following websites.
 
+* [arg.jpg](https://stock.adobe.com/nl/51873441?as_campaign=TinEye&as_content=tineye_match&epi1=51873441&tduid=c9e0571fdf0b336fcdac35df4aad3f07&as_channel=affiliate&as_campclass=redirect&as_source=arvato)
+* [purmamarca.jpeg](https://espaciopurmamarca.com/todo-lo-que-necesitas-saber-sobre-el-carnaval-de-humahuaca/)
+* [wild.jpg](https://stock.adobe.com/259036831?as_campaign=TinEye&as_content=tineye_match&epi1=259036831&tduid=c9e0571fdf0b336fcdac35df4aad3f07&as_channel=affiliate&as_campclass=redirect&as_source=arvato)
+* [cuyo.jpg](https://stock.adobe.com/158403818?as_campaign=TinEye&as_content=tineye_match&epi1=158403818&tduid=c9e0571fdf0b336fcdac35df4aad3f07&as_channel=affiliate&as_campclass=redirect&as_source=arvato)
+* [northwest.jpg](https://www.ambito.com/informacion-general/jujuy/puede-recibir-turistas-todo-el-pais-y-el-miercoles-llegara-un-vuelo-buenos-aires-n5212965)
+* [mesopotamia.jpg](https://www.shutterstock.com/image-photo/part-iguazu-falls-seen-argentinian-national-1338447983?irclickid=0x0UqXVBZxyLTdJWw42%3A3xY3UkBUzrSVVSK8Uc0&irgwc=1&utm_medium=Affiliate&utm_campaign=TinEye&utm_source=77643&utm_term=&c3ch=Affiliate&c3nid=IR-77643)
+* [pampas](https://irudi.photoshelter.com/gallery/Argentina/G0000scnOGiQfrR0/)
+* [patagonia](https://www.shutterstock.com/image-photo/wonderful-view-mount-fitz-roy-cerro-665391427?irclickid=0x0UqXVBZxyLTdJWw42%3A3xY3UkBUzoQZVSK8Uc0&irgwc=1&utm_medium=Affiliate&utm_campaign=TinEye&utm_source=77643&utm_term=&c3ch=Affiliate&c3nid=IR-77643)
+
 ### Acknowledgements
 
 * My Mentor Oluwafemi Medale who guided me through development.
