@@ -183,8 +183,8 @@ def logout():
     return redirect(url_for("browse"))
 
 
-@app.route("/add_experience", methods=["GET", "POST"])
-def add_experience():
+@app.route("/share", methods=["GET", "POST"])
+def share():
     if request.method == "POST":
         experience = {
             "category_name": request.form.get("category_name"),
@@ -210,7 +210,7 @@ def add_experience():
     categories = mongo.db.categories.find().sort("category_name", 1)
     regions = mongo.db.regions.find().sort("region_name", 1)
     return render_template(
-        "add_experience.html", categories=categories,
+        "share.html", categories=categories,
         regions=regions)
 
 

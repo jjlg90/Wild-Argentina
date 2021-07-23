@@ -65,9 +65,9 @@
             <h2 class="bold-header center-align">- <span>D</span>ISCOVER -</h2>
         </a>
         <p>Planning a trip? Check attractions in every region of the country.</p>
-        <!-- Redirects user to add_experience.html if logged in, else to login.html -->
+        <!-- Redirects user to share.html if logged in, else to login.html -->
         {% if session.user %}
-            <a href="{{ url_for('add_experience') }}">
+            <a href="{{ url_for('share') }}">
         {% else %}
             <a href="{{ url_for('login') }}">
         {% endif %}
@@ -82,7 +82,7 @@
         <div class="container">
             <div class="row">
                 <div class="col m1"></div>
-                <div class="col m5 s12 blue-grey darken-4 center-align valign-wrapper" style="height: 20rem;">
+                <div class="col m5 s12 blue-grey darken-4 center-align valign-wrapper summary" style="height: 20rem;">
                     <p class="white-text">With a surface of 2.78 million km², Argentina counts with a little bit of everything when it comes to landscapes. From the highest mountains in the continent to extensive beaches with white sand, to the eerie quiet of the deser to the lively sounds of the tropical rainforest, Wild Argentina is here to help you discover new activities, share awesome food experiences, be part of old traditions and browse through incredible places.</p>
                 </div>
                 <div class="col m5 s12 about"></div>
@@ -92,7 +92,7 @@
             <div class="row">
                 <div class="col m1"></div>
                 <div class="col m5 s12 about2"></div>
-                <div class="col m5 s12 blue-grey darken-4 center-align valign-wrapper" style="height: 20rem;">
+                <div class="col m5 s12 blue-grey darken-4 center-align valign-wrapper summary" style="height: 20rem;">
                     <p class="white-text">People and land are strongly connected by traditions. Many of them are now endangered by the quick pace of the modern world. Our mission is to help travelers make the most our of their trip by supporting local communities and businesses, and sharing their experiences for others to learn. </p>
                 </div>
                 <div class="col m1"></div>
