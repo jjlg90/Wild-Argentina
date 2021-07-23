@@ -18,17 +18,20 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Home Page
 @app.route("/")
 @app.route("/index")
 def index():
     return render_template("index.html")
 
 
+# 404 error page
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html"), 404
 
 
+# Limits access to feature to users only
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -41,6 +44,7 @@ def login_required(f):
     return wrap
 
 
+# Query the db for experiences
 @app.route("/browse")
 def browse():
     query = request.args.get("query")
@@ -52,15 +56,16 @@ def browse():
     return render_template("browse.html", experiences=experiences)
 
 
+# Gets regions from db
 @app.route("/discover")
 def discover():
     regions = list(mongo.db.regions.find())
     return render_template("discover.html", regions=regions)
 
 
+# Filter experiences by region
 @app.route("/region")
 def region():
-    # filter experiences by region
     query = request.args.get("query")
     if query:
         regions = list(mongo.db.regions.find())
@@ -76,7 +81,7 @@ def region():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # check if username already exists in db
+        # Check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -95,7 +100,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        # put the new user into 'session' cookie
+        # Put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
@@ -105,12 +110,12 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # check if username exists in db
+        # Check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # ensure hashed password matches user input
+            # Ensure hashed password matches user input
             if check_password_hash(
                existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
@@ -118,12 +123,12 @@ def login():
                 return redirect(url_for("profile", username=session["user"]))
 
             else:
-                # invalid password match
+                # Invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
+            # Username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
@@ -132,7 +137,7 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab the session user's username from db
+    # Grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})
     experiences = list(mongo.db.experiences.find())
@@ -144,6 +149,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# Gets user's information from db and allow them to modify it
 @app.route("/edit_profile/<user_id>", methods=["GET", "POST"])
 def edit_profile(user_id):
     if request.method == "POST":
@@ -178,12 +184,13 @@ def delete_profile(user_id):
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookies
+    # Remove user from session cookies
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("browse"))
 
 
+# Posts new experience to db
 @app.route("/share", methods=["GET", "POST"])
 @login_required
 def share():
@@ -216,6 +223,7 @@ def share():
         regions=regions)
 
 
+# Get individual experience from db
 @app.route("/view_experience/<experience_id>", methods=["GET"])
 def view_experience(experience_id):
     experience = mongo.db.experiences.find_one(
@@ -224,6 +232,7 @@ def view_experience(experience_id):
                            experience_id=experience)
 
 
+# Gets experience's information from db and allow the user to modify it
 @app.route("/edit_experience/<experience_id>", methods=["GET", "POST"])
 def edit_experience(experience_id):
     if request.method == "POST":

@@ -163,8 +163,6 @@ __[Click here to read testing documentation.](testing.md)__
 
 ## Deployment
 
-### Heroku Pages
-
 ### Forking the GitHub Repository
 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
