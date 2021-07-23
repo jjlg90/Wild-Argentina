@@ -176,16 +176,14 @@ def delete_profile(user_id):
 
 
 @app.route("/logout")
-@login_required
 def logout():
     # remove user from session cookies
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("login"))
+    return redirect(url_for("browse"))
 
 
 @app.route("/add_experience", methods=["GET", "POST"])
-@login_required
 def add_experience():
     if request.method == "POST":
         experience = {
@@ -207,7 +205,7 @@ def add_experience():
         }
         mongo.db.experiences.insert_one(experience)
         flash("New experience added!")
-        return redirect(url_for("get_experiences"))
+        return redirect(url_for("browse"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     regions = mongo.db.regions.find().sort("region_name", 1)

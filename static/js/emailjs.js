@@ -8,13 +8,15 @@ function sendMail(contactForm) {
         .then(
             function (response) {
                 console.log("SUCCESS", response);
-                alert("SUCCESS! Message sent");
+                document.getElementById("modal2trigger").click();
+                $('#modal2content').html("SUCCESS!<br/>Message has been sent.")
                 document.getElementById("contact-form").reset();
                 document.getElementById("close").click();
             },
             function (error) {
                 console.log("FAILED", error);
-                alert("Woops! It seems we have run into some issues, please try again in a few minutes");
+                document.getElementById("modal2trigger").click();
+                $('#modal2content').html("Woops! It seems we have run into some issues<br/>please try again in a few minutes");
             }
         );
     return false; // To block from loading a new page
