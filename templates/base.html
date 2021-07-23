@@ -60,7 +60,7 @@
 
         <!-- Mobile Navbar -->
         <ul class="sidenav" id="mobile-demo">
-            <h4 class="center-align">WILD</br>ARGENTINA</h4>
+            <li><h4 class="center-align">WILD<br/>ARGENTINA</h4></li>
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('browse') }}">Browse</a></li>
             <li><a href="{{ url_for('discover') }}">Discover</a></li>
@@ -131,7 +131,7 @@
                         <input type="email" name="email" id="emailaddress" class="white-text form-control"
                             placeholder="Email" required />
                         <textarea rows="5" name="message" id="message" class="white-text form-control"
-                            placeholder="Write your message here" required pattern="\S+"></textarea>
+                            placeholder="Write your message here"  required></textarea>
                         <div class="form-row text-center">
                             <div class="col">
 
@@ -139,8 +139,7 @@
                         </div>
                         <div class="modal-footer grey darken-3 center-align">
                             <button type="submit" class="btn center-align green darken-3">Send</button>
-                            <a href="#!" id="close" type="button"
-                                class="modal-close center-align waves-effect waves-green btn red"
+                            <a href="#!" id="close" class="modal-close center-align waves-effect waves-green btn red"
                                 data-dismiss="modal">Close</a>
                         </div>
                     </form>
