@@ -167,9 +167,13 @@ nav .bold-header {
     text-overflow: ellipsis;
 }
 
+.xp-view {
+    height: 40rem;
+}
+
 .summary {
     overflow-y: auto;
-    height: 12rem;
+    height: 100%;
 }
 
 .summary p {

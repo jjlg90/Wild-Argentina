@@ -32,7 +32,7 @@ def page_not_found(e):
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
-        if 'logged_in' in session:
+        if 'user' in session:
             return f(*args, **kwargs)
         else:
             flash("You need to login first")
@@ -185,6 +185,7 @@ def logout():
 
 
 @app.route("/share", methods=["GET", "POST"])
+@login_required
 def share():
     if request.method == "POST":
         experience = {
