@@ -1,7 +1,7 @@
 <h1>Wild Argentina</h1>
 <h1>Backend Development Milestone Project</h1>
 
-![responsive-mockup](/static/images/responsive-mockup.png)
+![responsive-mockup](/static/images/doc-img/responsive-mockup.png)
 
 This project consists of a website for traveler's community WILD ARGENTINA, where users can browse, discover and share experiences lived in different regions of Argentina. WILD ARGENTINA is all about connection to nature, tradition and Argentina's vast diversity.
 Check out the [Live Project](https://wild-argentina.herokuapp.com/index)
@@ -84,7 +84,7 @@ Rendered templates customized with HTML5, CSS3, Javascript and Jinja.
 ### Skeleton
 For the wireframes, Figma software has been used to lay out the foundations of the website.
 
-![Wireframes](/static/images/wireframes.jpg)
+![Wireframes](/static/images/doc-img/wireframes.jpg)
 
 ### Surface
  The content is easy to navigate and is neatly divided in sections.
