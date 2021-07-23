@@ -23,6 +23,10 @@ html {
     margin-bottom: 0;
 }
 
+.section-title {
+    font-size: 4rem;
+}
+
 /*======================================== Start Navbar ========================================*/
 
 nav .bold-header {
@@ -44,6 +48,8 @@ nav .bold-header {
 
 /*======================================== Start Main ========================================*/
 
+/*==== Navbar ====*/
+
 .nav-wrapper ul li a:hover {
     background-color: #e2e600;
     color: black;
@@ -57,6 +63,8 @@ nav .bold-header {
     font-weight: 600;
     transition: all 0.35s ease-in-out;
 }
+
+/*==== Slider ====*/
 
 .wild {
     margin-top: 0;
@@ -88,6 +96,26 @@ nav .bold-header {
     background-color: #faff00;
 }
 
+#scroll-down {
+    position: relative;
+    bottom: 6%;
+    left: 48%;
+    z-index: 2;
+    display: inline-block;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: #fff;
+    font-size: 4rem;
+    text-decoration: none;
+    transition: opacity .3s;
+    opacity: .5;
+}
+
+#scroll-down:hover {
+    opacity: 1;
+}
+
+/*==== Navigation ====*/
 
 .navigation {
     background-color: #212121;
@@ -114,9 +142,7 @@ nav .bold-header {
     font-size: 1.5rem;
 }
 
-.section-title {
-    font-size: 4rem;
-}
+/*==== About Us ====*/
 
 .about-us h3 {
     padding-bottom: 1rem;
@@ -150,9 +176,13 @@ nav .bold-header {
     padding: 10px;
 }
 
+/*==== Google Maps ====*/
+
 #map {
     height: 20rem;
 }
+
+/*==== Discover ====*/
 
 .region-img {
     background-size: cover;
@@ -160,41 +190,58 @@ nav .bold-header {
     height: 20rem;
 }
 
+/*==== Browse - Profile ====*/
+
+.xp-image {
+    max-height: 20rem;
+    object-fit: cover;
+}
+
 .xp-summary {
     word-break: break-all;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    max-height: 10rem;
 }
 
+/*==== View Experience ====*/
+
 #expandedImg {
-    max-height: 45rem;
+    max-height: 35rem;
     object-fit: cover;
+    width: 100%;
 }
 
 .gallery {
     object-fit: cover;
-    max-height: 12rem;
+    max-height: 7rem;
     max-width: 16rem;
+    width: 100%;
+}
+
+.description-xp {
+    height: 100%;
+    overflow-y: auto;
+    max-height: 40rem;
+}
+
+/*==== View Experience ====*/
+
+.summary {
+    overflow-y: auto;
+    height: 12rem;
+    overflow-wrap: break-word;
+}
+
+.summary p, .xp-summary p {
+    font-size: 0.9rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .xp-view {
     height: 40rem;
-}
-.summary-xp {
-    overflow-y: auto;
-    height: 100%;
-    max-height: 45rem;
-}
-.summary {
-    overflow-y: auto;
-    height: 12rem;
-}
-
-.summary p {
-    font-size: 0.9rem;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
 }
 
 /*======================================== Start Footer ========================================*/
@@ -232,25 +279,6 @@ nav .bold-header {
     transition: all 0.35s ease-in-out;
 }
 
-#scroll-down {
-    position: relative;
-    bottom: 6%;
-    left: 48%;
-    z-index: 2;
-    display: inline-block;
-    -webkit-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    color: #fff;
-    font-size: 4rem;
-    text-decoration: none;
-    transition: opacity .3s;
-    opacity: .5;
-}
-
-#scroll-down:hover {
-    opacity: 1;
-}
-
 /*======================================== 404.html ========================================*/
 
 .error {
@@ -286,8 +314,7 @@ nav .bold-header {
         font-size: 3rem;
     }
 
-    .summary-xp {
-    
+    .description-xp {
     max-height: 25rem;
 }
 }
@@ -313,7 +340,7 @@ nav .bold-header {
         height: 10rem;
     }
 
-    .summary-xp p, .summary p {
+    .xp-summary p, .summary p {
         font-size: 0.8rem;
     }
 
