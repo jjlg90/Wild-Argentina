@@ -11,9 +11,9 @@
 ### First time visitor
 
 * "As a First Time Visitor, I expect the purpose of the website to be explicit"
-   * The user is received with the slider of images, with the first slide showcasing a WILD ARGENTINA banner, and the following the names and picture of the regions.
+   * The user is received by an images slider, with the first slide showcasing a WILD ARGENTINA banner, and the following the names and picture of the different regions.
    * Website's header reads WA.
-   * "About WA" section in the home page, where the mission and objectives of the organization are displayed.
+   * "About WA" section is in the home page, where the mission and objectives of the organization are displayed.
 
 * "As a First Time Visitor, I consider smooth navigation through content to be a key aspect"
    * A practical fixed positioned navbar that collapses into a burger button for small screens fulfill this purpose.
@@ -32,7 +32,7 @@
 ### Returning visitor
 
 * "As a Returning Visitor, I would like to see new entries and updates"
-   * The latest entries are shown on top of the "Browse" page, aswell as for every region in the "Discover" page.
+   * All experiences are shown on the "Browse" page.
 
 * "As a Returning Visitor, I want to have ease of access to contact the bakery"
    * The contact form is connected to emailJS API, sending emails to the registered mailbox every time an user submits a form.
@@ -89,6 +89,14 @@
 
 * Submit button triggers modal pop up indicating success or failure - Check
 
+##### emailJS
+* Feature is expected to send form information to a mailbox through emailJS API.
+  * Filled and submitted form for testing. Email received in mailbox. - Check
+ ![new-message.png](/static/images/doc-img/new-message.png)
+* Feature is expected to send a confirmation email to the user.
+  * Filled and submitted form for testing. Email received in personal mailbox. - Check
+ ![email-sent.png](/static/images/doc-img/email-sent.png)
+
 
 ![alert.png](/static/images/doc-img/alert.png)
 
@@ -102,9 +110,9 @@
 
 #### discover.html
 
-* Clicked "Discover Experiences" button at individual region - Check
+* Clicked "Discover Experiences" button at every region - Check
 
-#### view_experiences.html
+#### view_experience.html
 
 * Clicked scrolldown anchor button - Check
 * Clicked every picture in gallery to ensure they replace the expanded one - Check
@@ -114,7 +122,7 @@
 * Google Maps API. Feature is expected to show a map over the location, with a marker and a pop-up window on click - Check
     * Street view and satellite features fully responsive - Check
 
-![gallery.png](/static/images/doc-img/map.png)
+![map.png](/static/images/doc-img/map.png)
 
 #### login.html
 
@@ -122,6 +130,7 @@
 * Log in form validation active - Check
 ![login.png](/static/images/doc-img/login.png)
 * Log in submission functional, user added in session cookie - Check
+
 * Data handling login function:
     * Checks if username exists in database "users" collection.
     * Ensures hashed password matches user input
@@ -130,6 +139,7 @@
     * If "Invalid password match" alerts "Incorrect Username and/or Password"
     * If "Username doesn't exist" alerts "Incorrect Username and/or Password"
     * Redirects user to profile page.
+
 * Users collection in database:
 ![users-collection](/static/images/doc-img/users-collection.png)
 * Clicked Logout button - Check
@@ -139,10 +149,11 @@
 
 * Clicked "New here? Register Account" anchor - Check
 * Register form validation active - Check
-![register.png](/static/images/doc-img/registered.png)
+![registered.png](/static/images/doc-img/registered.png)
 * Register form submission functional, user added to session cookie - Check
 * User added to database.
 ![user-added.png](/static/images/doc-img/user-added.png) 
+
 * Data handling register function:
     * Checks if username exists in database "users" collection.
     * If username exists in database, alerts "Username already exists"
@@ -150,33 +161,46 @@
     * User added to session cookie.
     * Redirects user to profile page.
 
+#### profile.html
 
+* Clicked "EDIT PROFILE" anchor, redirects to edit_profile page - Check
+* Clicked "CANCEL" button, redirects to profile - Check
+* Edit profile form validation functional - Check
+![editprofile-validation.png](/static/images/doc-img/editprofile-validation.png)
+* User updated to database - Check
+![user-edited.png](/static/images/doc-img/user-edited.png)
+* Clicked "DELETE PROFILE" anchor, defensive modal pops up - Check
+![delete-popup.png](/static/images/doc-img/delete-popup.png) 
+    * Clicked "CANCEL", defensive modal closes - Check
+    * Clicked "DELETE", profile deleted from database - Check
 
+* Data handling edit_profile function:
+    * Gets user's information from database "users" collection.
+    * Populates form values with profile's information.
+    * Username has readonly attribute.
+    * Updates user new information to database "users" collection. 
 
+#### share.html
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* Share new experience form validation functional - Check
+![share-validation.png](/static/images/doc-img/share-validation.png) 
+* Experience added to database - Check
+![xp-added.png](/static/images/doc-img/xp-added.png) 
+* Experience card rendered to browse.html, region.html and profile.html - Check
+* Clicked "EDIT" anchor, redirects to edit_experience page - Check
+* Edit experience form validation functional - Check
+![editxp-validation.png](/static/images/doc-img/editxp-validation.png)
+* Clicked "READ MORE" anchor, redirected to experience's view_experience.html - Check
+* Clicked "DELETE" anchor, defensive modal pops up - Check
+![xp-deleted.png](/static/images/doc-img/xp-deleted.png) 
+    * Clicked "CANCEL", defensive modal closes - Check
+    * Clicked "DELETE", experience deleted from database - Check
 
 
 ### Code Validation
 
 *  [Valid HTML!](/assets/images/valid-html.png) HTML has been validated by [W3C validator](https://validator.w3.org/)
+
 *  ![Valid CSS!](/static/images/doc-img/valid-css.jpg) CSS has been validated by [Jigsaw validator](https://jigsaw.w3.org/css-validator/)
 
 ### Responsiveness

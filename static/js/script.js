@@ -69,7 +69,7 @@
     }
 });
 
-//Control gallery images display -- view_experience.html
+//Control gallery images display - view_experience.html
 function img_gallery(imgs) {
             // Get the expanded image
             var expandImg = document.getElementById("expandedImg");

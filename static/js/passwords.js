@@ -1,8 +1,8 @@
-//Store password and repeat password values -- register.html / edit_profile.html
+//Store password and repeat password values - register.html / edit_profile.html
 let password = document.getElementById("password");
 let confirm_password = document.getElementById("confirm_password");
 
-//Compare values -- register.html / edit_profile.html
+//Compare values - register.html / edit_profile.html
 function validatePassword(){
   if(password.value != confirm_password.value) {
     confirm_password.setCustomValidity("Passwords Don't Match");
