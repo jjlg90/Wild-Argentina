@@ -8,7 +8,7 @@
     //Modal trigger
     $('.modal').modal();
     //Date picker -- register.html
-    $('.datepicker').datepicker({
+    $('#birthdate').datepicker({
         format: "dd mmmm, yyyy",
         yearRange: [1920,2015],
         showClearBtn: true,

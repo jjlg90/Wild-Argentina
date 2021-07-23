@@ -50,7 +50,8 @@
 * "As a Frequent User, I want to have control over my information"
     * Once registered, users can share, edit and delete their experiences, aswell as their personal profile information.
     * My experiences section in "Profile" page displays the latest added experiences from the user.
-* As a Frequent User, I want to check new features.
+
+* "As a Frequent User, I want to check new features"
    * Future features include: 
     * User's travel journal. For those users who would like to read about someone else's adventures.
     * Trip maker functionality with travel map, where users will be able to make a schedule of activities.
@@ -63,6 +64,7 @@
     * Pick location interactive map in "Share" form. (instead of latitude/longitude input fields)
 
 ## Functionality Testing
+##### -- (Check = Working as expected) -- 
 
 ### Navigation
 
@@ -73,6 +75,22 @@
 * Clicked header to ensure that it redirects to home page - Check
 * Clicked header to ensure that it redirects to home page. (mobile) - Check
 * Clicked social media links in footer - Check
+
+#### index.html
+
+* Clicked each anchor in navigation section - Check
+
+#### Contact Form
+
+* Clicked contact button trigger, modal form pop up - Check
+* Validation functional - Check
+
+![form-validation.png](/static/images/doc-img/form-validation.png)
+
+* Submit button triggers modal pop up indicating success or failure - Check
+
+
+![alert.png](/static/images/doc-img/alert.png)
 
 #### browse.html
 
@@ -88,19 +106,79 @@
 
 #### view_experiences.html
 
+* Clicked scrolldown anchor button - Check
 * Clicked every picture in gallery to ensure they replace the expanded one - Check
 
 ![gallery.png](/static/images/doc-img/gallery.png)
+
+* Google Maps API. Feature is expected to show a map over the location, with a marker and a pop-up window on click - Check
+    * Street view and satellite features fully responsive - Check
+
+![gallery.png](/static/images/doc-img/map.png)
+
+#### login.html
+
+* Clicked "New here? Register Account" anchor - Check
+* Log in form validation active - Check
+![login.png](/static/images/doc-img/login.png)
+* Log in submission functional, user added in session cookie - Check
+* Data handling login function:
+    * Checks if username exists in database "users" collection.
+    * Ensures hashed password matches user input
+    * If successful, logs in user into account and alerts "Welcome, {username}" 
+    * User information is retrieved from database and displayed in profile.
+    * If "Invalid password match" alerts "Incorrect Username and/or Password"
+    * If "Username doesn't exist" alerts "Incorrect Username and/or Password"
+    * Redirects user to profile page.
+* Users collection in database:
+![users-collection](/static/images/doc-img/users-collection.png)
+* Clicked Logout button - Check
+* Logout method fully functional - Check
+
+#### register.html
+
+* Clicked "New here? Register Account" anchor - Check
+* Register form validation active - Check
+![register.png](/static/images/doc-img/registered.png)
+* Register form submission functional, user added to session cookie - Check
+* User added to database.
+![user-added.png](/static/images/doc-img/user-added.png) 
+* Data handling register function:
+    * Checks if username exists in database "users" collection.
+    * If username exists in database, alerts "Username already exists"
+    * Else, generates password hash from user input.
+    * User added to session cookie.
+    * Redirects user to profile page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### Code Validation
 
 *  [Valid HTML!](/assets/images/valid-html.png) HTML has been validated by [W3C validator](https://validator.w3.org/)
-*  ![Valid CSS!](/static/images/valid-css.jpg) CSS has been validated by [Jigsaw validator](https://jigsaw.w3.org/css-validator/)
+*  ![Valid CSS!](/static/images/doc-img/valid-css.jpg) CSS has been validated by [Jigsaw validator](https://jigsaw.w3.org/css-validator/)
 
 ### Responsiveness
 The responsiveness of the website has been tested with Chrome Developer Tools and Chrome Responsive Viewer.
 * Fully responsive on all tested devices - Check
-
-### Links
-* Clicked all anchor elements. They work as expected on every browser. - Check

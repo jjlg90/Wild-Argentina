@@ -54,12 +54,14 @@ Rendered templates customized with HTML5, CSS3, Javascript and Jinja.
 
 #### Future Features
 * User's travel journal. For those users who would like to read about someone else's adventures.
-* Trip maker functionality, where users will be able to make a schedule of activities.
-* Experience's comment section.
-* Pagination for experiences.
-* Expanded information area for each region, with relevant media and links.
-* Awareness section. Where users can be informed on how to preserve the enviroments visited, and how to help the local communities.
-* Aesthetic animations.
+    * Trip maker functionality with travel map, where users will be able to make a schedule of activities.
+    * Saved experiences section.
+    * Experience's comment section.
+    * Pagination for experiences.
+    * Expanded information area for each region, with relevant media and links.
+    * Awareness section. Where users can be informed on how to preserve the enviroments visited, and how to help the local communities.
+    * Aesthetic animations.
+    * Pick location interactive map in "Share" form. (instead of latitude/longitude input fields)
 
 ### Structure 
 
