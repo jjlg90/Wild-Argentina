@@ -53,14 +53,14 @@
                         href="{{ url_for('view_experience', experience_id=experience._id) }}">Read More</a>
                     <!-- Show delete/edit buttons only if the logged in user is the author of the experience -->
                     {% if session.user|lower == experience.by|lower %}
-                    <a class="red-text darken-2 right modal-trigger" href="#modal2">Delete</a>
+                    <a class="red-text darken-2 right modal-trigger" href="#delete-xp">Delete</a>
                     <a class="green-text darken-2 right"
                         href="{{ url_for('edit_experience', experience_id=experience._id) }}">Edit</a>
                     {% endif %}
                 </div>
             </div>
             <!-- Defensive Modal -->
-            <div id="modal2" class="modal">
+            <div id="delete-xp" class="modal">
                 <div class="modal-content white-text center-align grey darken-4">
                     <h4>Are you sure?</h4>
                     <hr>

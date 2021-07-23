@@ -170,10 +170,12 @@ nav .bold-header {
 .xp-view {
     height: 40rem;
 }
-
+.summary-xp {
+    height: 100%;
+}
 .summary {
     overflow-y: auto;
-    height: 100%;
+    height: 12rem;
 }
 
 .summary p {
@@ -293,7 +295,7 @@ nav .bold-header {
         height: 10rem;
     }
 
-    .summary p {
+    .summary-xp p, .summary p {
         font-size: 0.8rem;
     }
 
