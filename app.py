@@ -60,6 +60,7 @@ def discover():
 
 @app.route("/region")
 def region():
+    # filter experiences by region
     query = request.args.get("query")
     if query:
         regions = list(mongo.db.regions.find())

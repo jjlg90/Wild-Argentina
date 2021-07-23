@@ -293,6 +293,10 @@ nav .bold-header {
         font-size: 0.8rem;
     }
 
+    #scroll-down {
+    left: 42%;
+    }
+
 }
 
 @media screen and (max-width: 520px) {

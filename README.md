@@ -1,10 +1,10 @@
 <h1>Wild Argentina</h1>
 <h1>Backend Development Milestone Project</h1>
 
-![responsive-design]()
+![responsive-mockup](/static/images/responsive-mockup.png)
 
 This project consists of a website for traveler's community WILD ARGENTINA, where users can browse, discover and share experiences lived in different regions of Argentina. WILD ARGENTINA is all about connection to nature, tradition and Argentina's vast diversity.
-Check out the [Live Project]()
+Check out the [Live Project](https://wild-argentina.herokuapp.com/index)
 
 #### Disclaimer
 WILD ARGENTINA traveler community does not exist. The creation of this project is purely educative. 
@@ -83,7 +83,7 @@ Rendered templates customized with HTML5, CSS3, Javascript and Jinja.
 ### Skeleton
 For the wireframes, Figma software has been used to lay out the foundations of the website.
 
-Check out the [Wireframes]() here!
+![Wireframes](/static/images/wireframes.jpg)
 
 ### Surface
  The content is easy to navigate and is neatly divided in sections.
@@ -106,7 +106,6 @@ Check out the [Wireframes]() here!
 * Red and Green for buttons
     * #f44336
     * #4caf50
-
 
 
 The fonts are:
@@ -183,10 +182,41 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 6. Type `git clone`, and then paste the URL you copied in Step 3.
 
 ```
-$ git clone https://github.com/jjlg90/Real-Bread
+$ git clone https://github.com/jjlg90/Wild-Argentina
 ```
 
 7. Press Enter. Your local clone will be created.
+
+### Connecting to MongoDB
+1. Log in to MongoDB.
+2. Within the "Cluster1" tab selected, click on "Connect".
+3. Select "Connect your application".
+4. Select _Python_ version 3.6 or later.
+5. Copy _connection string_ and then paste it to env.py
+6. Create an instance of PyMongo and pass the application to that instance.
+* Like:  `mongo = PyMongo(app`)
+
+### Heroku Deployment
+
+Preparing Local workspace for Heroku:
+1. Create *__requirements.txt__*  file.
+CLI: `pip freeze --local > requirements.txt`
+
+2. Creating *__Procfile__* file.
+Type in file `web: python app.py` and save.
+
+Create Heroku application:
+1. Log in Heroku.
+2. Click `New` button. 
+2. Select `Create a new app`.
+3. Enter the app name.
+4. Select region.
+5. Under `Settings`, __click__ `Config Vars` to add Configuration Variables from the env.py file.
+6. In your CLI install Heroku by typing `npm install -g heroku`  
+7. Select `Deploy` option.
+8. Under `Deployment method` select the __GitHub__ option.
+9. Select Automatic deploys from the main branch and select `Deploy Branch`.
+10. Click `Open App` button located in the top-right corner of your Heroku account.
 
 ## Credits
 
