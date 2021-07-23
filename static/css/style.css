@@ -167,11 +167,24 @@ nav .bold-header {
     text-overflow: ellipsis;
 }
 
+#expandedImg {
+    max-height: 45rem;
+    object-fit: cover;
+}
+
+.gallery {
+    object-fit: cover;
+    max-height: 12rem;
+    max-width: 16rem;
+}
+
 .xp-view {
     height: 40rem;
 }
 .summary-xp {
+    overflow-y: auto;
     height: 100%;
+    max-height: 45rem;
 }
 .summary {
     overflow-y: auto;
@@ -272,6 +285,11 @@ nav .bold-header {
     .section-title {
         font-size: 3rem;
     }
+
+    .summary-xp {
+    
+    max-height: 25rem;
+}
 }
 
 @media screen and (max-width: 715px) {

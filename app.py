@@ -207,7 +207,6 @@ def share():
             "picture2": request.form.get("picture2"),
             "picture3": request.form.get("picture3"),
             "picture4": request.form.get("picture4"),
-            "picture5": request.form.get("picture5"),
             "latitude": request.form.get("latitude"),
             "longitude": request.form.get("longitude"),
             "by": session["user"]
@@ -248,7 +247,6 @@ def edit_experience(experience_id):
             "picture2": request.form.get("picture2"),
             "picture3": request.form.get("picture3"),
             "picture4": request.form.get("picture4"),
-            "picture5": request.form.get("picture5"),
             "latitude": request.form.get("latitude"),
             "longitude": request.form.get("longitude"),
             "by": session["user"]
