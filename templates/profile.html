@@ -6,44 +6,30 @@
     <h3 class="bold-header section-title center-align white-text mar-t">- PROFILE -</h3>
 
     <div class="row">
-        <div class="card horizontal blue-grey darken-4 white-text" >
             <!-- User's profile picture -->
-            <div class="card-image">
-                <img class="responsive-img" src="{{ username.user_image }}" style="max-height: 20rem;" alt="User's Profile Picture">
+            <div class="col xl4 l4 m4 s12">
+                <img id="profile-img" src="{{ username.user_image }}" alt="User's Profile Picture">
             </div>
-            <div class="card-stacked">
+            <div id="profile-content" class="col xl8 l8 m8 s12 blue-grey darken-4 white-text left">
                 <!-- User's profile information -->
-                <div class="card-content">
-                    <h4 class="header bold-header center">{{ username.username }}</h4>
-                    <h5 class="center">Birthdate: {{ username.birthdate }}</h5>
-                    <h5 class="center">Gender: {{ username.gender }}</h5>
-                    <h5 class="center">Nationality: {{ username.nationality }}</h5>
-                    <h5 class="center">Email: {{ username.email }}</h5>
+                <div>
+                    <h4 class="header bold-header center-align">{{ username.username }}</h4>
+                    <h5 class="center-align">Birthdate: {{ username.birthdate }}</h5>
+                    <h5 class="center-align">Gender: {{ username.gender }}</h5>
+                    <h5 class="center-align">Nationality: {{ username.nationality }}</h5>
+                    <h5 class="center-align">Email: {{ username.email }}</h5>
                 </div>
                 <!-- Action buttons -->
-                <div class="card-action blue-grey darken-4 center">
-                    <a class="green-text darken-2 center" href="{{ url_for('edit_profile', user_id=username._id) }}">Edit profile</a>
-                    <a class="red-text darken-2 center modal-trigger" href="#delete-profile">Delete profile</a>
-                </div>
-            </div>
-        </div>
-        <!-- Defensive Modal -->
-            <div id="delete-profile" class="modal">
-                <div class="modal-content white-text center-align grey darken-4">
-                    <h4>Are you sure?</h4>
-                    <hr>
-                    <p>Profile information can't be recovered.</p>
-                    <p>But your added experiences will still be available to the community.</p>
-                </div>
-                <div class="modal-footer grey darken-3">
-                    <a href="{{ url_for('delete_profile', user_id=username._id) }}" class="left modal-close btn red waves-effect waves-green btn-flat white-text">Delete</a>
-                    <a href="{{ url_for('profile', username=session['user']) }}" class="right modal-close waves-effect btn green waves-green btn-flat white-text">Cancel</a>
+                <div class="blue-grey darken-4 center-align">
+                    <a class="green-text darken-2 btn-flat" href="{{ url_for('edit_profile', user_id=username._id) }}">Edit profile</a>
+                    <a class="red-text darken-2 btn-flat" href="{{ url_for('delete_profile', user_id=username._id) }}">Delete profile</a>
                 </div>
             </div>
     </div>
 
 
-    <h3 class="bold-header center-align white-text mar-t">- MY EXPERIENCES -</h3>
+    <h3 class="bold-header center-align section-title white-text mar-t">- MY EXPERIENCES -</h3>
+
     <div class="row exp mar-b">
         <!-- Loop through all experiences -->
         {% for experience in experiences %}
@@ -81,6 +67,7 @@
         {% endfor %}
 
     </div>
+
     <div class="row exp mar-b">
     </div>
 </div>

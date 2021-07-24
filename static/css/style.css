@@ -190,6 +190,18 @@ nav .bold-header {
     height: 20rem;
 }
 
+/*==== Profile ====*/
+
+#profile-img {
+    width: 100%;
+    max-height: 30rem;
+    object-fit: cover;
+}
+
+#profile-content {
+    height: 20rem;
+}
+
 /*==== Browse - Profile ====*/
 
 .xp-image {
@@ -225,8 +237,6 @@ nav .bold-header {
     overflow-y: auto;
     max-height: 40rem;
 }
-
-/*==== View Experience ====*/
 
 .summary {
     overflow-y: auto;
@@ -346,6 +356,16 @@ nav .bold-header {
 
     #scroll-down {
     left: 42%;
+    }
+
+}
+
+@media screen and (max-width: 601px) {
+
+    #profile-img {
+        width: 100%;
+        max-height: 20rem;
+        object-fit: scale-down;
     }
 
 }
