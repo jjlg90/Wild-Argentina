@@ -268,9 +268,11 @@ def edit_experience(experience_id):
 def delete_experience(experience_id):
     mongo.db.experiences.remove({"_id": ObjectId(experience_id)})
     flash("Experience Deleted")
+    experiences = list(mongo.db.experiences.find())
     username = mongo.db.users.find_one(
         {"username": session["user"]})
-    return render_template("profile.html", username=username)
+    return render_template(
+        "profile.html", username=username, experiences=experiences)
 
 
 if __name__ == "__main__":

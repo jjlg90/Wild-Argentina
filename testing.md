@@ -196,6 +196,14 @@
     * Clicked "CANCEL", defensive modal closes - Check
     * Clicked "DELETE", experience deleted from database - Check
 
+### Known Bugs
+
+#### emailJS
+
+    * Contact form will submit when filled with whitespaces. Didn't managed to fix it on time for submission.
+    
+    * Jinja iteration generates an id repetition for the defensive modal in "DELETE" anchor for experiences. Didn't managed to fix it on time for submission. Opted instead for remove the modal to be able to validate the html code.
+    ![xp-deleted.png](/static/images/doc-img/xp-deleted.png) 
 
 ### Code Validation
 

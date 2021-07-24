@@ -22,7 +22,7 @@
         </form>
     </div>
 
-    <h3 class="bold-header section-title center-align white-text mar-b mar-t">- REGION -</br>EXPERIENCES</h3>
+    <h3 class="bold-header section-title center-align white-text mar-b mar-t">- REGION -<br/>EXPERIENCES</h3>
     <div class="row exp mar-b mar-t">
         <!-- Loop through all experiences -->
         {% for experience in experiences %}
@@ -51,24 +51,10 @@
                         href="{{ url_for('view_experience', experience_id=experience._id) }}">Read More</a>
                     <!-- Show delete/edit buttons only if the logged in user is the author of the experience -->
                     {% if session.user|lower == experience.by|lower %}
-                    <a class="red-text darken-2 right modal-trigger" href="#modal2">Delete</a>
+                    <a class="red-text darken-2 right modal-trigger" href="{{ url_for('delete_experience', experience_id=experience._id) }}">Delete</a>
                     <a class="green-text darken-2 right"
                         href="{{ url_for('edit_experience', experience_id=experience._id) }}">Edit</a>
                     {% endif %}
-                </div>
-            </div>
-            <!-- Defensive Modal -->
-            <div id="modal2" class="modal">
-                <div class="modal-content white-text center-align grey darken-4">
-                    <h4>Are you sure?</h4>
-                    <hr>
-                    <p>Deleted experiences can't be recovered.</p>
-                </div>
-                <div class="modal-footer grey darken-3">
-                    <a href="{{ url_for('delete_experience', experience_id=experience._id) }}"
-                        class="left modal-close btn red waves-effect waves-green btn-flat white-text">Delete</a>
-                    <a href="{{ url_for('browse') }}"
-                        class="right modal-close waves-effect btn green waves-green btn-flat white-text">Cancel</a>
                 </div>
             </div>
         </div>
