@@ -200,14 +200,14 @@
 
 #### emailJS
 
-    * Contact form will submit when filled with whitespaces. Didn't managed to fix it on time for submission.
+* Contact form will submit when filled with whitespaces. Didn't managed to fix it on time for submission.
     
-    * Jinja iteration generates an id repetition for the defensive modal in "DELETE" anchor for experiences. Didn't managed to fix it on time for submission. Opted instead for remove the modal to be able to validate the html code.
+* Jinja iteration generates an id repetition for the defensive modal in "DELETE" anchor for experiences. Didn't managed to fix it on time for submission. Opted instead for removing the modal to be able to validate the html code.
     ![xp-deleted.png](/static/images/doc-img/xp-deleted.png) 
 
 ### Code Validation
 
-*  [Valid HTML!](/assets/images/valid-html.png) HTML has been validated by [W3C validator](https://validator.w3.org/)
+*  ![Valid HTML!](/static/images/doc-img/valid-html.png) HTML has been validated by [W3C validator](https://validator.w3.org/)
 
 *  ![Valid CSS!](/static/images/doc-img/valid-css.jpg) CSS has been validated by [Jigsaw validator](https://jigsaw.w3.org/css-validator/)
 

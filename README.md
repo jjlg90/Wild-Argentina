@@ -86,30 +86,14 @@ Rendered templates customized with HTML5, CSS3, Javascript and Jinja.
 ### Skeleton
 For the wireframes, Figma software has been used to lay out the foundations of the website.
 
-![Wireframes](/static/images/doc-img/wireframes.jpg)
+[Wireframes](https://www.figma.com/file/SUwGQiRIHkvFGcUEcUah0o/Wild-Argentina?node-id=0%3A1&viewport=931%2C795%2C0.25)
 
 ### Surface
  The content is easy to navigate and is neatly divided in sections.
 
  The colour palette is dark, looking to highlight the brightness of the images to attract attention to them. 
 
-* Blue and Grey for backgrounds
-    * #263238
-    * #607d8b 
-    * #546e7a 
-    * #455a64 
-    * #37474f 
-    * #424242
-    * #212121
-
-* White and Yellow for fonts
-    * #fafafa
-    * #faff00 
-
-* Red and Green for buttons
-    * #f44336
-    * #4caf50
-
+![palette](/static/images/doc-img/colors.png)
 
 The fonts are:
 * Montserrat. Bold and with a strong connection to the content. "The old posters and signs in the traditional Montserrat neighborhood of Buenos Aires 
